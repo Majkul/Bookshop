@@ -1,2 +1,2 @@
 # Bookshop
-Booksop OOP project
+Bookshop OOP project
