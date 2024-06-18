@@ -1,12 +1,6 @@
 using System.Data.Common;
 using System.Dynamic;
 
-class Koszyk{
-    public List<Produkt> listaProduktow;   
-    //mockup
-    // DELETE ASAP
-}
-
 class Zamowienie{
     private int numer;
     public int Numer{
@@ -61,7 +55,7 @@ class Zamowienie{
     public Zamowienie(Koszyk koszyk,int idKlienta,string adres){
         this.idKlienta = idKlienta;
         this.adres = adres;
-        this.listaProduktow = koszyk.listaProduktow;
+        this.listaProduktow = koszyk.ListaProduktow;
         Console.WriteLine(koszyk);
     }
     public void kompletuj(Produkt produkt){

@@ -1,18 +1,18 @@
 class Magazyn{
     private int id;
     private List<Produkt> produkty;
-    public List<Produkt> get_set_produkty
+    public List<Produkt> Produkty
     {
         get { return produkty; }
         set { produkty = value; }
     }
     private List<Zamowienie> zamowieniaDoRealizacji;
-    public List<Zamowienie> get_set_zamowieniaDoRealizacji
+    public List<Zamowienie> ZamowieniaDoRealizacji
     {
         get { return zamowieniaDoRealizacji; }
     }
     private List<Zamowienie> zamowieniaZrealizowane;
-    public List<Zamowienie> get_set_zamowieniaZrealizowane
+    public List<Zamowienie> ZamowieniaZrealizowane
     {
         get { return zamowieniaZrealizowane; }
     }
@@ -32,7 +32,7 @@ class Magazyn{
     }
     public Produkt znajdzProdukt(int id){
         foreach(Produkt produkt in produkty){
-            if(produkt.get_id == id){
+            if(produkt.Id == id){
                 return produkt;
             }
         }

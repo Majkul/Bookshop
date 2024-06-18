@@ -18,7 +18,7 @@ class Pracownik{
         //Kompletowanie zamówienia produktami, które zostały zamówione, można dodać exception jak się okazuje jednak że nie ma produktu na stanie
         foreach(Produkt produkt in zamowienie.ListaProduktow){
             if (produkt is Fizyczne fizycznyProdukt){
-                if(fizycznyProdukt.get_set_stan == 0){
+                if(fizycznyProdukt.Stan == 0){
                     throw new Exception("Produkt nie jest dostepny");
                 }
                 zamowienie.kompletuj(produkt);  
@@ -26,11 +26,11 @@ class Pracownik{
             zamowienie.generujLink(zamowienie.IdKlienta, produkt);
         }
         zamowienie.zmienStatus("Zrealizowane");
-        magazyn.get_set_zamowieniaZrealizowane.Add(zamowienie);
-        magazyn.get_set_zamowieniaDoRealizacji.Remove(zamowienie);
+        magazyn.ZamowieniaZrealizowane.Add(zamowienie);
+        magazyn.ZamowieniaDoRealizacji.Remove(zamowienie);
     }
     public void zamowKuriera(Kurier kurier){
-        List<Zamowienie> zamowienia_do_wyslania = magazyn.get_set_zamowieniaZrealizowane;
+        List<Zamowienie> zamowienia_do_wyslania = magazyn.ZamowieniaZrealizowane;
         if(zamowienia_do_wyslania.Count == 0){
             throw new Exception("Brak zamowien do wyslania");
         }
@@ -40,7 +40,7 @@ class Pracownik{
         }
         //return nowe_zamowienie_kuriera;
     }
-    public void dodajProdukt(string nazwa, int id, double cena, string autor, string kategoria){
+    public void dodajProdukt(string nazwa, int id, double cena, string autor, string kategoria, int type, int stan){
         if(nazwa == null){
             throw new Exception("Nie podano nazwy");
         }
@@ -50,14 +50,27 @@ class Pracownik{
         if(magazyn.znajdzProdukt(id) != null){
             throw new Exception("Produkt o podanym id juz istnieje i jest w magazynie");
         }
-        magazyn.get_set_produkty.Add(new Produkt(nazwa, id, cena, autor, kategoria));
+        switch(type){
+            case 0:
+                magazyn.Produkty.Add(new Twarda_okladka(nazwa, id, autor, kategoria, cena, stan));
+                break;
+            case 1:
+                magazyn.Produkty.Add(new Miekka_okladka(nazwa, id, autor, kategoria, cena, stan));
+                break;
+            case 2:
+                magazyn.Produkty.Add(new Audiobook(nazwa, id, autor, kategoria, cena, "blablabla")); //link do audiobooka
+                break;
+            case 3:
+                magazyn.Produkty.Add(new E_book(nazwa, id, autor, kategoria, cena, "blablabla"));
+                break;
+        }
     }
     public void usunProdukt(int id){
         Produkt szukany = magazyn.znajdzProdukt(id);
         if(szukany == null){
             throw new Exception("Produkt o podanym id nie istnieje");
         }
-        magazyn.get_set_produkty.Remove(szukany);
+        magazyn.Produkty.Remove(szukany);
     }
     public void ustawStan(int id, int stan){
         Produkt szukany = magazyn.znajdzProdukt(id);
@@ -66,7 +79,7 @@ class Pracownik{
         }
         if(szukany is Fizyczne fizycznyProdukt){
             
-            fizycznyProdukt.get_set_stan = stan;
+            fizycznyProdukt.Stan = stan;
             throw new Exception("Produkt nie jest fizyczny");
         }
     }
