@@ -25,30 +25,51 @@ class Klient {
             Platnosc platnosc = new Platnosc();
             if (platnosc.potwierdzenie()){
                 zamowienie.Status = "Zaplacone";
+            } else {
+                throw new Exception("Platnosc nieudana");
             }
+        } else {
+            throw new Exception("Zamowienie nie jest gotowe lub zostalo juz zaplacone");
         }
     }
 
     public void zamow(Zamowienie zamowienie){
-        zamowienie.Status = "Przyjete";
         zamowienia.Add(zamowienie);
     }
 
     public void dodajDoKoszyka(Produkt produkt){
+        if (produkt is Fizyczne && ((Fizyczne)produkt).Stan == 0){
+            throw new Exception("Produkt niedostepny");
+        }
         koszyk.ListaProduktow.Add(produkt);
         koszyk.Wartosc += produkt.Cena;
     }
 
-    public void usunZKoszyka(Produkt produkt){
-        koszyk.ListaProduktow.Remove(produkt);
-        koszyk.Wartosc -= produkt.Cena;
+    // public void usunZKoszyka(Produkt produkt){
+    //     koszyk.ListaProduktow.Remove(produkt);
+    //     koszyk.Wartosc -= produkt.Cena;
+    // }
+
+    public void usunZKoszyka(int index){
+        if (index < 0 || index >= koszyk.ListaProduktow.Count){
+            throw new Exception("Nie ma takiego produktu w koszyku");
+        }
+        koszyk.Wartosc -= koszyk.ListaProduktow[index].Cena;
+        koszyk.ListaProduktow.RemoveAt(index);
     }
 
     public string statusZamowienia(int numer){
+        if (numer < 0 || numer >= zamowienia.Count){
+            throw new Exception("Nie ma takiego zamowienia");
+        }
         return zamowienia[numer].Status;
     }
 
     public void przegladaj(){
+        if (koszyk.ListaProduktow.Count == 0){
+            Console.WriteLine("Koszyk jest pusty");
+            return;
+        }
         foreach(Produkt produkt in koszyk.ListaProduktow){
             Console.WriteLine(produkt.Nazwa + ": " + produkt.Cena);
         }
