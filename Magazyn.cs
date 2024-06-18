@@ -31,9 +31,9 @@ class Magazyn{
         return null;
     }
     public Produkt znajdzProdukt(int id){
-        return produkty.Find(x => x.Id = id);
+        return produkty.Find(x => x.Id == id);
     }
     public Produkt znajdzProdukt(Produkt produkt){
-        return produkty.Find(x => x.Id = produkt.Id);
+        return produkty.Find(x => x.Id == produkt.Id);
     }
 }
