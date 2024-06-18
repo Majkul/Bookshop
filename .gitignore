@@ -1,3 +1,6 @@
 obj/
 bin/
 /obj
+/bin
+bookshop.csproj
+Projekt.csproj
