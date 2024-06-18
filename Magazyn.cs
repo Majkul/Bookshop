@@ -31,11 +31,6 @@ class Magazyn{
         return null;
     }
     public Produkt znajdzProdukt(int id){
-        foreach(Produkt produkt in produkty){
-            if(produkt.Id == id){
-                return produkt;
-            }
-        }
-        return null;
+        return produkty.Contains(Produkt produkt);
     }
 }

@@ -16,6 +16,16 @@ abstract class Produkt{
     public string Autor{ get => autor; set => autor = value; }
     public string Kategoria{ get => kategoria; set => kategoria = value; }
     public double Cena{ get => cena; set => cena = value; }
+    public override bool Equals(object obj)
+    {
+        if (obj == null || GetType() != obj.GetType())
+        {
+            return false;
+        }
+
+        Produkt other = (Produkt)obj;
+        return Id == other.Id;
+    }
 }
 
 abstract class Fizyczne : Produkt{
