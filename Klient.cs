@@ -33,7 +33,12 @@ class Klient {
         }
     }
 
-    public void zamow(Zamowienie zamowienie){
+    public void zamow(){
+        // ewentualnie dodac wybranie adresu
+        if (koszyk.ListaProduktow.Count == 0){
+            throw new Exception("Koszyk jest pusty");
+        }
+        Zamowienie zamowienie = new Zamowienie(koszyk, id, adres);
         zamowienie.Status = "Oczekujace na zaplate";
         zamowienia.Add(zamowienie);
     }
