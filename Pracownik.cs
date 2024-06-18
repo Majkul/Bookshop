@@ -10,47 +10,64 @@ class Pracownik{
         this.magazyn = magazyn;
     }
     public void realizaZamowienie(int numer){
-        zamowienie = magazyn.zamowieniaDoRealizacji[idZamowienia];
-        if(!zamowinie){
+        
+        Zamowienie zamowienie = magazyn.znajdzZamowienie(numer);
+        if(zamowienie == null){
             throw new Exception("Nie ma takiego zamowienia");
         }
-        //zamowienie.kompletuj();
-        //zamowienie.zmienStatus("Zrealizowane");
-        //magazyn.zamowieniaZrealizowane.Add(zamowienie);
-        //magazyn.zamowieniaDoRealizacji.Remove(zamowienie);
+        //Kompletowanie zamówienia produktami, które zostały zamówione, można dodać exception jak się okazuje jednak że nie ma produktu na stanie
+        foreach(Produkt produkt in zamowienie.ListaProduktow){
+            if (produkt is Fizyczne fizycznyProdukt){
+                if(fizycznyProdukt.get_set_stan == 0){
+                    throw new Exception("Produkt nie jest dostepny");
+                }
+                zamowienie.kompletuj(produkt);  
+            }
+            zamowienie.generujLink(zamowienie.IdKlienta, produkt);
+        }
+        zamowienie.zmienStatus("Zrealizowane");
+        magazyn.get_set_zamowieniaZrealizowane.Add(zamowienie);
+        magazyn.get_set_zamowieniaDoRealizacji.Remove(zamowienie);
     }
     public void zamowKuriera(Kurier kurier){
-        zamowienia_do_wyslania = magazyn.zamowieniaZrealizowane;
+        List<Zamowienie> zamowienia_do_wyslania = magazyn.get_set_zamowieniaZrealizowane;
         if(zamowienia_do_wyslania.Count == 0){
             throw new Exception("Brak zamowien do wyslania");
         }
-        nowe_zamowienie_kuriera = new Kurier(zamowienia_do_wyslania);
-        foreach(zamowienie in zamowienia_do_wyslania){
+        Kurier nowe_zamowienie_kuriera = new Kurier(zamowienia_do_wyslania);
+        foreach(Zamowienie zamowienie in zamowienia_do_wyslania){
             zamowienie.zmienStatus("Wyslane");
         }
+        //return nowe_zamowienie_kuriera;
     }
-    public void dodajProdukt(string nazwa, int id, double cena){
+    public void dodajProdukt(string nazwa, int id, double cena, string autor, string kategoria){
         if(nazwa == null){
             throw new Exception("Nie podano nazwy");
         }
         if(cena < 0){
             throw new Exception("Cena nie moze byc ujemna");
         }
-        if(magazyn.produkty.Contains(id)){
+        if(magazyn.znajdzProdukt(id) != null){
             throw new Exception("Produkt o podanym id juz istnieje i jest w magazynie");
         }
-        magazyn.produkty.Add(new Produkt(nazwa, id, cena));
+        magazyn.get_set_produkty.Add(new Produkt(nazwa, id, cena, autor, kategoria));
     }
     public void usunProdukt(int id){
-        if(!magazyn.produkty.Contains(id)){
+        Produkt szukany = magazyn.znajdzProdukt(id);
+        if(szukany == null){
             throw new Exception("Produkt o podanym id nie istnieje");
         }
-        //magazyn.produkty.Remove(id);
+        magazyn.get_set_produkty.Remove(szukany);
     }
     public void ustawStan(int id, int stan){
-        if(!magazyn.produkty.Contains(id)){
+        Produkt szukany = magazyn.znajdzProdukt(id);
+        if(szukany == null){
             throw new Exception("Produkt o podanym id nie istnieje");
         }
-        //magazyn.produkty[id].ustawStan(stan);
+        if(szukany is Fizyczne fizycznyProdukt){
+            
+            fizycznyProdukt.get_set_stan = stan;
+            throw new Exception("Produkt nie jest fizyczny");
+        }
     }
 }

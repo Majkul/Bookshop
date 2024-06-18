@@ -1,11 +1,6 @@
 using System.Data.Common;
 using System.Dynamic;
 
-class Produkt{
-    //mockup 
-    // DELETE ASAP
-}
-
 class Koszyk{
     public List<Produkt> listaProduktow;   
     //mockup
@@ -76,8 +71,7 @@ class Zamowienie{
         this.status = status;
         Console.WriteLine("Status updated to"+status);
     }
-
-    public string generujLink(int idKlienta,Produkt produkt){
+    public string generujLink(int idKlienta,Produkt produkt){   //tutaj chyba można usunąć idKlienta bo ono się nie zmienia w trakcie życia zamówienia 
         // Hiper zaawansowane generowanie linku za
         // pomoca sztucznej inteligencji CHATGPT
         // ORACLE COPILOT
