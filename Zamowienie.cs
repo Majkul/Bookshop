@@ -19,6 +19,9 @@ class Zamowienie{
         get{
             return this.status;
         }
+        set{
+            this.status = value;
+        }
     }
     private string adres;
     public string Adres{

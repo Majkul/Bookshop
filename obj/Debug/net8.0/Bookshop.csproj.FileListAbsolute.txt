@@ -8,3 +8,13 @@ C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\obj\Debug\net8.0\Bookshop
 C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\obj\Debug\net8.0\Bookshop.AssemblyInfo.cs
 C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\obj\Debug\net8.0\Bookshop.csproj.CoreCompileInputs.cache
 C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\obj\Debug\net8.0\Bookshop.sourcelink.json
+C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\bin\Debug\net8.0\Bookshop.exe
+C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\bin\Debug\net8.0\Bookshop.deps.json
+C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\bin\Debug\net8.0\Bookshop.runtimeconfig.json
+C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\bin\Debug\net8.0\Bookshop.dll
+C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\bin\Debug\net8.0\Bookshop.pdb
+C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\obj\Debug\net8.0\Bookshop.dll
+C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\obj\Debug\net8.0\refint\Bookshop.dll
+C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\obj\Debug\net8.0\Bookshop.pdb
+C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\obj\Debug\net8.0\Bookshop.genruntimeconfig.cache
+C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\obj\Debug\net8.0\ref\Bookshop.dll

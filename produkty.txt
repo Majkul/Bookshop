@@ -1,0 +1,20 @@
+Krzyżacy;1;19,99;Henryk Sienkiewicz;Historyczna;0;45
+Lalka;2;22,50;Bolesław Prus;Powieść;1;62
+Potop;3;25,75;Henryk Sienkiewicz;Historyczna;0;33
+Quo Vadis;4;18,00;Henryk Sienkiewicz;Historyczna;2;1
+Pan Tadeusz;5;20,00;Adam Mickiewicz;Epopeja;0;15
+Faraon;6;21,99;Bolesław Prus;Historyczna;1;80
+W pustyni i w puszczy;7;17,49;Henryk Sienkiewicz;Przygodowa;0;98
+Chłopi;8;23,50;Władysław Reymont;Powieść;2;1
+Przedwiośnie;9;16,75;Stefan Żeromski;Powieść;3;1
+Zbrodnia i kara;10;19,90;Fiodor Dostojewski;Kryminał;0;55
+Ojciec Goriot;11;18,20;Honoré de Balzac;Powieść;1;71
+Wojna i pokój;12;29,99;Lew Tołstoj;Historyczna;2;1
+Anna Karenina;13;27,50;Lew Tołstoj;Powieść;3;1
+Duma i uprzedzenie;14;21,00;Jane Austen;Romans;0;42
+Emma;15;20,75;Jane Austen;Romans;1;88
+Mistrz i Małgorzata;16;24,99;Michaił Bułhakow;Fantastyka;0;76
+Hamlet;17;18,99;William Shakespeare;Dramat;0;34
+Makbet;18;17,50;William Shakespeare;Dramat;1;53
+Sonety;19;16,00;William Shakespeare;Poezja;2;1
+Folwark zwierzęcy;20;22,00;George Orwell;Satyra;3;1

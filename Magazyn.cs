@@ -31,6 +31,6 @@ class Magazyn{
         return null;
     }
     public Produkt znajdzProdukt(int id){
-        return produkty.Contains(Produkt produkt);
+        return null;
     }
 }

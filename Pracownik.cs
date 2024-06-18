@@ -29,7 +29,7 @@ class Pracownik{
         magazyn.ZamowieniaZrealizowane.Add(zamowienie);
         magazyn.ZamowieniaDoRealizacji.Remove(zamowienie);
     }
-    public void zamowKuriera(Kurier kurier){
+    public Kurier zamowKuriera(){
         List<Zamowienie> zamowienia_do_wyslania = magazyn.ZamowieniaZrealizowane;
         if(zamowienia_do_wyslania.Count == 0){
             throw new Exception("Brak zamowien do wyslania");
@@ -38,7 +38,7 @@ class Pracownik{
         foreach(Zamowienie zamowienie in zamowienia_do_wyslania){
             zamowienie.zmienStatus("Wyslane");
         }
-        //return nowe_zamowienie_kuriera;
+        return nowe_zamowienie_kuriera;
     }
     public void dodajProdukt(string nazwa, int id, double cena, string autor, string kategoria, int type, int stan){
         if(nazwa == null){
