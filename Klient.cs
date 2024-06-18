@@ -21,7 +21,7 @@ class Klient {
     public List<Zamowienie> Zamowienia{ get => zamowienia; set => zamowienia = value; }
 
     public void zaplac(Zamowienie zamowienie){
-        if (zamowienie.Status == "Przyjete"){
+        if (zamowienie.Status == "Oczekujace na zaplate"){
             Platnosc platnosc = new Platnosc();
             if (platnosc.potwierdzenie()){
                 zamowienie.Status = "Zaplacone";
@@ -34,6 +34,7 @@ class Klient {
     }
 
     public void zamow(Zamowienie zamowienie){
+        zamowienie.Status = "Oczekujace na zaplate";
         zamowienia.Add(zamowienie);
     }
 
