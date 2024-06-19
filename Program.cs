@@ -8,7 +8,7 @@ class Program
         //----------------------
         string line;
 
-        System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\micha\OneDrive\Desktop\codin\PO\Bookshop_proj\produkty.txt");
+        System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\..\produkty.txt");
         while((line = file.ReadLine()) != null)
         {
             string[] words = line.Split(';');
