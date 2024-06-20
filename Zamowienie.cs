@@ -1,6 +1,7 @@
 using System.Data.Common;
 using System.Dynamic;
 
+
 class Zamowienie{
     static int numerZamowienia = 10568;
     private int numer;
@@ -78,13 +79,12 @@ class Zamowienie{
             }
         }
 
-    // <summary>
-    // Jedyny Konstruktor
-    // </summary>
-    // <param name="koszyk">Koszyk, z ktorego produkty sa zamawianie</param>
-    // <param name="idKlienta">Id Klienta, do ktorego nalezy zamowienie</param>
-    // <param name="Adres">Adres, gdize dostarczyc zamowienie</param>
-    // <author>Dominik</author>
+    /// <summary>
+    /// Jedyny Konstruktor
+    /// </summary>
+    /// <param name="koszyk"> Koszyk, z ktorego produkty sa zamawianie.</param>
+    /// <param name="idKlienta"> Id Klienta, do ktorego nalezy zamowienie.</param>
+    /// <param name="Adres"> Adres, gdzie dostarczyc zamowienie.</param>
     public Zamowienie(Koszyk koszyk,int idKlienta,string adres){
         
         if(koszyk.ListaProduktow.Count <= 0){
@@ -114,12 +114,10 @@ class Zamowienie{
         numerZamowienia++;
     }
 
-    // <summary>
-    // Zmienia status zamowienia
-    // </summary>
-    // <param name="status">Nowy status zamowienia</param>
-    // <returns>Nothing / No returns </returns>
-    // <author>Dominik</author>
+    /// <summary>
+    /// Zmienia status zamowienia
+    /// </summary>
+    /// <param name="status">Nowy status zamowienia.</param>
     public void zmienStatus(string status){
         if(status == "" || string.IsNullOrWhiteSpace(status)){
             throw new WrongStatusException("Niepoprawny status");
@@ -132,11 +130,10 @@ class Zamowienie{
 
 
 
-    // <summary>
-    // Generuje link do cyfrowego produktu
-    // </summary>
-    // <returns>Link do cyfrowego produktu</returns>
-    // <author>Dominik</author>
+    /// <summary>
+    /// Generuje link do cyfrowego produktu.
+    /// </summary>
+    /// <returns>Link do cyfrowego produktu.</returns>
     public string generujLink(){   
         
         if(link == ""){
