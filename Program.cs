@@ -1,4 +1,4 @@
-﻿
+﻿using System.Globalization;
 class Program
 {
     static public List<Kurier> import_kurierzy(){
@@ -34,7 +34,7 @@ class Program
         while((line = file.ReadLine()) != null)
         {
             string[] words = line.Split(';');
-            Zamowienie zamowienie = new Zamowienie(int.Parse(words[0]), int.Parse(words[1]), double.Parse(words[3]), DateTime.Parse(words[4]), DateTime.Parse(words[5]), words[6], words[7]);
+            Zamowienie zamowienie = new Zamowienie(int.Parse(words[0]), int.Parse(words[1]), double.Parse(words[3].Replace(',', '.'), CultureInfo.InvariantCulture), DateTime.Parse(words[4]), DateTime.Parse(words[5]), words[6], words[7]);
             foreach(string produkt in words[2].Split(',')){
                 zamowienie.ListaProduktow.Add(produkty.Find(x => x.Id == int.Parse(produkt)));
             }
@@ -76,7 +76,7 @@ class Program
         while((line = file.ReadLine()) != null)
         {
             string[] words = line.Split(';');
-            pracownik.dodajProdukt(words[0],int.Parse(words[1]),double.Parse(words[2]),words[3],words[4],int.Parse(words[5]),int.Parse(words[6]));
+            pracownik.dodajProdukt(words[0],int.Parse(words[1]),double.Parse(words[2].Replace(',', '.'), CultureInfo.InvariantCulture),words[3],words[4],int.Parse(words[5]),int.Parse(words[6]));
         }
 
         file.Close();
@@ -216,22 +216,25 @@ class Program
                                 }
                                 break;
                             case "2":
-                                Console.WriteLine("Koszyk:");
-                                klient.przegladaj();
-                                break;
-                            case "3":
-                                Console.WriteLine("Koszyk:");
-                                klient.przegladaj();
-                                Console.WriteLine("Podaj ID produktu, który chcesz usunąć z koszyka. Jeżeli chcesz wrócić do menu, wciśnij ENTER:");
-                                numer = Console.ReadLine();
-                                if(numer == "") break;
                                 try{
-                                    klient.usunZKoszyka(int.Parse(numer));
-                                }
-                                catch(Exception e){
+                                    Console.WriteLine("Koszyk:");
+                                    klient.przegladaj();
+                                } catch (Exception e){
                                     Console.WriteLine(e.Message);
                                 }
                                 break;
+                            case "3":
+                                try{
+                                    Console.WriteLine("Koszyk:");
+                                    klient.przegladaj();
+                                Console.WriteLine("Podaj ID produktu, który chcesz usunąć z koszyka. Jeżeli chcesz wrócić do menu, wciśnij ENTER:");
+                                numer = Console.ReadLine();
+
+                                if(numer == "") break;
+                                klient.usunZKoszyka(int.Parse(numer));
+                                } catch(Exception e){
+                                    Console.WriteLine(e.Message);
+                                }
                                 break;
                             case "4":
                                 try{
@@ -333,7 +336,7 @@ class Program
                                 Console.WriteLine("Podaj id produktu:");
                                 id = int.Parse(Console.ReadLine());
                                 Console.WriteLine("Podaj cenę produktu:");
-                                double cena = double.Parse(Console.ReadLine());
+                                double cena = double.Parse(Console.ReadLine().Replace(',', '.'), CultureInfo.InvariantCulture);
                                 Console.WriteLine("Podaj autora produktu:");
                                 string autor = Console.ReadLine();
                                 Console.WriteLine("Podaj kategorię do której zalicza się produkt:");
