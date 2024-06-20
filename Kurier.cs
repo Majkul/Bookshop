@@ -1,5 +1,6 @@
 class Kurier{
     private List<Zamowienie> zamowienia;
+    private string nazwa;
     public List<Zamowienie> Zamowienia{
         get{
             return this.zamowienia;
@@ -9,7 +10,7 @@ class Kurier{
         }
     }
 
-    public Kurier(){
+    public Kurier(string nazwa){
         this.zamowienia = new List<Zamowienie>();
     }
 

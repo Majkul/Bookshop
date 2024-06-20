@@ -1,9 +1,20 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography;
+﻿
 class Program
 {
-    public List<Magazyn> import_magazyny(){
+    static public List<Kurier> import_kurierzy(){
+        string line;
+        List<Kurier> kurierzy = new List<Kurier>();
+        System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\..\data\kurierzy.txt");
+        while((line = file.ReadLine()) != null)
+        {
+            string[] words = line.Split(';');
+            Kurier kurier = new Kurier(words[0]);
+            kurierzy.Add(kurier);
+        }
+        file.Close();
+        return kurierzy;
+    }
+    static public List<Magazyn> import_magazyny(){
         string line;
         List<Magazyn> magazyny = new List<Magazyn>();
         System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\..\data\magazyny.txt");
@@ -16,31 +27,36 @@ class Program
         file.Close();
         return magazyny;
     }
-    public void import_zamowienia(List<Magazyn> magazyny){
+    static public List<Zamowienie> import_zamowienia(List<Produkt> produkty){
         string line;
+        List<Zamowienie> zamowienia = new List<Zamowienie>();
         System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\..\data\zamowienia.txt");
         while((line = file.ReadLine()) != null)
         {
             string[] words = line.Split(';');
-            Zamowienie zamowienie = new Zamowienie(int.Parse(words[0]), int.Parse(words[1]), words[3], DateTime.Parse(words[3]), DateTime.Parse(words[4]));
-            zamowienie.zmienStatus(words[5]);
+            Zamowienie zamowienie = new Zamowienie(int.Parse(words[0]), int.Parse(words[1]), double.Parse(words[3]), DateTime.Parse(words[4]), DateTime.Parse(words[5]), words[6], words[7]);
             foreach(string produkt in words[2].Split(',')){
-                zamowienie.dodajProdukt(magazyny.Find(x=>x.Produkty.Exists(y=>y.Id == int.Parse(produkt))).Produkty.Find(y=>y.Id == int.Parse(produkt)));
+                zamowienie.ListaProduktow.Add(produkty.Find(x => x.Id == int.Parse(produkt)));
             }
+            zamowienia.Add(zamowienie);
         }
         file.Close();
+        return zamowienia;
     }
-    public void import_pracownicy(List<Magazyn> magazyny){
+    static public List<Pracownik> import_pracownicy(List<Magazyn> magazyny){
         string line;
+        List<Pracownik> pracownicy = new List<Pracownik>();
         System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\..\data\pracownicy.txt");
         while((line = file.ReadLine()) != null)
         {
             string[] words = line.Split(';');
             Pracownik pracownik = new Pracownik(words[0], words[1], int.Parse(words[2]), magazyny.Find(x=>x.Id == int.Parse(words[3])));
+            pracownicy.Add(pracownik);
         }
         file.Close();
+        return pracownicy;
     }
-    public List<Klient> import_klienci(){
+    static public List<Klient> import_klienci(){
         string line;
         List<Klient> klienci = new List<Klient>();
         System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\..\data\klienci.txt");
@@ -53,7 +69,7 @@ class Program
         file.Close();
         return klienci;
     }
-    public void import_produkty(Pracownik pracownik){
+    static public void import_produkty(Pracownik pracownik){
         string line;
 
         System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\..\data\produkty.txt");
@@ -85,23 +101,76 @@ class Program
             Console.WriteLine(produkt.Id.ToString().PadLeft(5,' ') + " | " + produkt.Nazwa.PadRight(30, ' ') + " | " + produkt.Autor.PadRight(20, ' ') + " | " + produkt.Kategoria.PadRight(15, ' ') + " | " + typ.PadRight(15, ' ') + " | " + produkt.Cena.ToString("F").PadLeft(5,' ') + " zł");
         }
     }
+    static public void save(Magazyn magazyn, List<Klient> klienci){
+        System.IO.StreamWriter file = new System.IO.StreamWriter(@"..\..\..\data\produkty.txt");
+        foreach(Produkt produkt in magazyn.Produkty){
+            if(produkt is Fizyczne){
+                file.WriteLine(produkt.Nazwa+";"+produkt.Id+";"+produkt.Cena+";"+produkt.Autor+";"+produkt.Kategoria+";"+(produkt is Twarda_okladka ? "0" : "1")+";"+((Fizyczne)produkt).Stan);
+            }
+            else{
+                file.WriteLine(produkt.Nazwa+";"+produkt.Id+";"+produkt.Cena+";"+produkt.Autor+";"+produkt.Kategoria+";"+(produkt is Audiobook ? "2" : "3")+";1");
+            }
+        }
+        file.Close();
+        List<Zamowienie> zamowienia = klienci[0].Zamowienia;
+        file = new System.IO.StreamWriter(@"..\..\..\data\zamowienia.txt");
+        foreach(Zamowienie zamowienie in zamowienia){
+            string produkty = "";
+            foreach(Produkt produkt in zamowienie.ListaProduktow){
+                produkty += produkt.Id + ",";
+            }
+            produkty = produkty.Remove(produkty.Length-1);
+            zamowienie.Link = zamowienie.Link == "" ? "none" : zamowienie.Link;
+            file.WriteLine(zamowienie.Numer+";"+zamowienie.IdKlienta+";"+produkty+";"+zamowienie.Wartosc+";"+zamowienie.DzienZamowienia+";"+zamowienie.OstatniaAktualizacja+";"+zamowienie.Status+";"+zamowienie.Link);
+        }
+        file.Close();
+        file = new System.IO.StreamWriter(@"..\..\..\data\magazyny.txt");
+        string zamowienia_str = "";
+        if(magazyn.ZamowieniaDoRealizacji.Count == 0){
+            zamowienia_str += ";";
+        }
+        foreach(Zamowienie zamowienie in magazyn.ZamowieniaDoRealizacji){
+            zamowienia_str += zamowienie.Numer + ",";
+        }
+        zamowienia_str = zamowienia_str.Remove(zamowienia_str.Length-1);
+        zamowienia_str += ";";
+        foreach(Zamowienie zamowienie in magazyn.ZamowieniaZrealizowane){
+            zamowienia_str += zamowienie.Numer + ",";
+        }
+        if(magazyn.ZamowieniaZrealizowane.Count != 0){
+            zamowienia_str = zamowienia_str.Remove(zamowienia_str.Length-1);
+        }
+        file.WriteLine(magazyn.Id.ToString() + ";" + zamowienia_str);
+        file.Close();
+    }
 
     static void Main()
     {
-        Magazyn magazyn = new Magazyn(1);
-        Pracownik pracownik = new Pracownik("Jan", "Kowalski", 1, magazyn);
-
-        
-
-        Klient klient = new Klient("Adam", "Małysz", "Wisła", 1);
-        Kurier kurier = new Kurier();
+        List<Magazyn> magazyny = import_magazyny();
+        List<Pracownik> pracownicy = import_pracownicy(magazyny);
+        import_produkty(pracownicy[0]);
+        List<Produkt> produkty = magazyny[0].Produkty;
+        List<Klient> klienci = import_klienci();
+        List<Zamowienie> zamowienia = import_zamowienia(produkty);
+        List<Kurier> kurierzy = import_kurierzy();
+        Kurier kurier = kurierzy[0];
+        foreach(Zamowienie zamowienie in zamowienia){
+            magazyny[0].dodajZamowienieDoMagazynu(zamowienie);
+            klienci.Find(x => x.Id == zamowienie.IdKlienta).Zamowienia.Add(zamowienie);
+            if(zamowienie.Status == "Wyslane"){
+                kurier.Zamowienia.Add(zamowienie);
+            }
+        }
+        Magazyn magazyn = magazyny[0];
+        Pracownik pracownik = pracownicy[0];
+        Klient klient = klienci[0];
         string wybor = "";
         int i;
         string logowanie = "";
         int numer_zamowienia;
         string filtr, f_tytul, f_autor, f_kategoria;
-        while(logowanie != "4"){
-            Console.WriteLine("Witaj! Wybierz jako kto chcesz się zalogować:\n1. Klient\n2. Pracownik\n3. Kurier\n4. Wyjdź");
+        while(logowanie != "5"){
+            Console.WriteLine("Witaj! Wybierz jako kto chcesz się zalogować:\n1. Klient\n2. Pracownik\n3. Kurier\n4. Zapisz stan\n5. Wyjdź");
             logowanie = Console.ReadLine();
             switch(logowanie){
                 case "1":
@@ -228,7 +297,12 @@ class Program
                                 }
                                 break;
                             case "2":
-                                pracownik.zamowKuriera(kurier);
+                                try{
+                                    pracownik.zamowKuriera(kurier);
+                                }
+                                catch(Exception e){
+                                    Console.WriteLine(e.Message);
+                                }
                                 break;
                             case "3":
                                 int stan_p;
@@ -304,6 +378,11 @@ class Program
                     catch(Exception e){
                         Console.WriteLine(e.Message);
                     }
+                    break;
+                case "4":
+                    save(magazyn, klienci);
+                    break;
+                case "5":
                     break;
                 default:
                     Console.WriteLine("Niepoprawny wybór");

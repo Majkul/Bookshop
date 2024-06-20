@@ -40,4 +40,12 @@ class Magazyn{
         }
         return produkt;
     }
+    public void dodajZamowienieDoMagazynu(Zamowienie zamowienie){
+        if (zamowienie.Status == "Zaplacone"){
+            zamowieniaDoRealizacji.Add(zamowienie);
+        }
+        else if (zamowienie.Status == "Zrealizowane" || zamowienie.Status == "Wysłane" || zamowienie.Status == "Dostarczone"){
+            zamowieniaZrealizowane.Add(zamowienie);
+        }
+    }
 }

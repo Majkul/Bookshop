@@ -73,6 +73,9 @@ class Zamowienie{
             get{
                 return this.link;
             }
+            set{
+                this.link = value;
+            }
         }
 
     // <summary>
@@ -106,7 +109,7 @@ class Zamowienie{
         this.dzienZamowienia = dzienZamowienia;
         this.ostatniaAktualizacja = ostatniaAktualizacja;
         this.status = status;
-        this.link = link;
+        this.link = link == "none"?"":link;
         this.listaProduktow = new List<Produkt>();
         numerZamowienia++;
     }
