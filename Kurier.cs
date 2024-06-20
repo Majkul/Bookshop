@@ -4,17 +4,17 @@ class Kurier{
         get{
             return this.zamowienia;
         }
+        set{
+            this.zamowienia = value;
+        }
     }
 
-    public Kurier(List<Zamowienie> zamowienia){
-        this.zamowienia = zamowienia;
-    }
-
-    public void odbior(){
-        // Zrealizowane odbiera
+    public Kurier(){
+        this.zamowienia = new List<Zamowienie>();
     }
 
     public void dostarcz(Zamowienie zamowienie){
-        // clearuje swoje zamowienia i oznacza jako dostarczone
+        zamowienie.zmienStatus("Dostarczone");
+        zamowienia.Remove(zamowienie);
     }
 }

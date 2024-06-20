@@ -24,28 +24,30 @@ class Klient {
         if (zamowienie.Status == "Oczekujace na zaplate"){
             Platnosc platnosc = new Platnosc();
             if (platnosc.potwierdzenie()){
-                zamowienie.Status = "Zaplacone";
+                zamowienie.zmienStatus("Zaplacone");
             } else {
-                throw new Exception("Platnosc nieudana");
+                throw new PlatnoscFailedException("Platnosc nieudana");
             }
         } else {
-            throw new Exception("Zamowienie nie jest gotowe lub zostalo juz zaplacone");
+            throw new ZamowienieIsOplaconeException("Zamowienie zostalo juz zaplacone");
         }
     }
 
     public void zamow(){
         // ewentualnie dodac wybranie adresu
         if (koszyk.ListaProduktow.Count == 0){
-            throw new Exception("Koszyk jest pusty");
+            throw new KoszykIsEmptyException("Koszyk jest pusty");
         }
         Zamowienie zamowienie = new Zamowienie(koszyk, id, adres);
-        zamowienie.Status = "Oczekujace na zaplate";
+        zamowienie.zmienStatus("Oczekujace na zaplate");
         zamowienia.Add(zamowienie);
+        koszyk = new Koszyk();
+        Console.WriteLine("Złożono zamówienie o numerze: "+zamowienie.Numer);
     }
 
     public void dodajDoKoszyka(Produkt produkt){
         if (produkt is Fizyczne && ((Fizyczne)produkt).Stan == 0){
-            throw new Exception("Produkt niedostepny");
+            throw new ProduktIsNotAvailableException("Produkt niedostepny");
         }
         koszyk.ListaProduktow.Add(produkt);
         koszyk.Wartosc += produkt.Cena;
@@ -58,7 +60,7 @@ class Klient {
 
     public void usunZKoszyka(int index){
         if (index < 0 || index >= koszyk.ListaProduktow.Count){
-            throw new Exception("Nie ma takiego produktu w koszyku");
+            throw new ItemNotInKoszykException("Nie ma takiego produktu w koszyku");
         }
         koszyk.Wartosc -= koszyk.ListaProduktow[index].Cena;
         koszyk.ListaProduktow.RemoveAt(index);
@@ -66,18 +68,18 @@ class Klient {
 
     public string statusZamowienia(int numer){
         if (numer < 0 || numer >= zamowienia.Count){
-            throw new Exception("Nie ma takiego zamowienia");
+            throw new ZamowienieDoesNotExistException("Nie ma takiego zamowienia");
         }
         return zamowienia[numer].Status;
     }
 
     public void przegladaj(){
         if (koszyk.ListaProduktow.Count == 0){
-            Console.WriteLine("Koszyk jest pusty");
-            return;
+            throw new KoszykIsEmptyException("Koszyk jest pusty");
         }
         foreach(Produkt produkt in koszyk.ListaProduktow){
-            Console.WriteLine(produkt.Nazwa + ": " + produkt.Cena);
+            Console.WriteLine(produkt.Nazwa + ": " + produkt.Cena.ToString("F") + "zl");
         }
+        Console.WriteLine("Wartosc koszyka: " + koszyk.Wartosc.ToString("F") + "zl");
     }
 }

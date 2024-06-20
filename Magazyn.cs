@@ -1,5 +1,9 @@
 class Magazyn{
     private int id;
+    public int Id
+    {
+        get { return id; }
+    }
     private List<Produkt> produkty;
     public List<Produkt> Produkty
     {
@@ -23,17 +27,17 @@ class Magazyn{
         zamowieniaZrealizowane = new List<Zamowienie>();
     }
     public Zamowienie znajdzZamowienie(int numer){
-        foreach(Zamowienie zamowienie in zamowieniaDoRealizacji){
-            if(zamowienie.Numer == numer){
-                return zamowienie;
-            }
+        Zamowienie zamowienie = zamowieniaDoRealizacji.Find(x => x.Numer == numer);
+        if(zamowienie == null){
+            throw new ZamowienieDoesNotExistException("Nie ma takiego zamowienia");
         }
-        return null;
+        return zamowienie;
     }
     public Produkt znajdzProdukt(int id){
-        return produkty.Find(x => x.Id == id);
-    }
-    public Produkt znajdzProdukt(Produkt produkt){
-        return produkty.Find(x => x.Id == produkt.Id);
+        Produkt produkt = produkty.Find(x => x.Id == id);
+        if(produkt == null){
+            throw new ProduktDoesNotExistException("Nie ma takiego produktu w magazynie");
+        }
+        return produkt;
     }
 }

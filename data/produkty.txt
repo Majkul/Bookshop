@@ -1,8 +1,9 @@
 Krzyżacy;1;19,99;Henryk Sienkiewicz;Historyczna;0;45
-Lalka;2;22,50;Bolesław Prus;Powieść;1;62
+Krzyżacy;21;11,99;Henryk Sienkiewicz;Historyczna;2;0
+Lalka;2;22,49;Bolesław Prus;Powieść;1;62
 Potop;3;25,75;Henryk Sienkiewicz;Historyczna;0;33
 Quo Vadis;4;18,00;Henryk Sienkiewicz;Historyczna;2;1
-Pan Tadeusz;5;20,00;Adam Mickiewicz;Epopeja;0;15
+Pan Tadeusz;5;20,00;Adam Mickiewicz;Epopeja;0;1
 Faraon;6;21,99;Bolesław Prus;Historyczna;1;80
 W pustyni i w puszczy;7;17,49;Henryk Sienkiewicz;Przygodowa;0;98
 Chłopi;8;23,50;Władysław Reymont;Powieść;2;1

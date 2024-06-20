@@ -39,7 +39,7 @@ abstract class Fizyczne : Produkt{
 }
 
 abstract class Cyfrowe : Produkt{
-    public Cyfrowe(string nazwa, int id, string autor, string kategoria, double cena, string link) : base(nazwa, id, autor, kategoria, cena) { }
+    public Cyfrowe(string nazwa, int id, string autor, string kategoria, double cena) : base(nazwa, id, autor, kategoria, cena) { }
 }
 
 class Twarda_okladka : Fizyczne{
@@ -51,9 +51,9 @@ class Miekka_okladka : Fizyczne{
 }
 
 class Audiobook : Cyfrowe{
-    public Audiobook(string nazwa, int id, string autor, string kategoria, double cena, string link) : base(nazwa, id, autor, kategoria, cena, link) { }
+    public Audiobook(string nazwa, int id, string autor, string kategoria, double cena) : base(nazwa, id, autor, kategoria, cena) { }
 }
 
 class E_book : Cyfrowe{
-    public E_book(string nazwa, int id, string autor, string kategoria, double cena, string link) : base(nazwa, id, autor, kategoria, cena, link) { }
+    public E_book(string nazwa, int id, string autor, string kategoria, double cena) : base(nazwa, id, autor, kategoria, cena) { }
 }
