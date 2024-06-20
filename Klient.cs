@@ -23,19 +23,19 @@ class Klient {
         zamowienia = new List<Zamowienie>();
     }
 
-    /// <summary>
+    /// <value>
     /// Właściwość Imie, umożliwiająca dostęp do imienia klienta.
-    /// </summary>
+    /// </value>
     public string Imie{ get => imie; set => imie = value; }
 
-    /// <summary>
+    /// <value>
     /// Właściwość Nazwisko, umożliwiająca dostęp do nazwiska klienta.
-    /// </summary>
+    /// </value>
     public string Nazwisko{ get => nazwisko; set => nazwisko = value; }
 
-    /// <summary>
+    /// <value>
     /// Właściwość Adres, umożliwiająca dostęp do adresu klienta.
-    /// </summary>
+    /// </value>
     public string Adres{ get => adres; set => adres = value; }
 
     /// <summary>
@@ -43,14 +43,14 @@ class Klient {
     /// </summary>
     public int Id{ get => id; set => id = value; }
 
-    /// <summary>
+    /// <value>
     /// Właściwość Koszyk, umożliwiająca dostęp do koszyka klienta.
-    /// </summary>
+    /// </value>
     public Koszyk Koszyk{ get => koszyk; set => koszyk = value; }
 
-    /// <summary>
+    /// <value>
     /// Właściwość Zamowienia, umożliwiająca dostęp do listy zamówień klienta.
-    /// </summary>
+    /// </value>
     public List<Zamowienie> Zamowienia{ get => zamowienia; set => zamowienia = value; }
 
     /// <summary>

@@ -1,7 +1,9 @@
 using System.Data.Common;
 using System.Dynamic;
 
-
+///<summary>
+///Klasa definiująca zamówienie
+///</summary>
 class Zamowienie{
     /// <value> Numer uzywany do stworzenia nowego id zamówienia </value>
     static int numerZamowienia = 10568;

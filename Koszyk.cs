@@ -13,13 +13,13 @@ class Koszyk{
         wartosc = 0;
     }
 
-    /// <summary>
+    /// <value>
     /// Właściwość ListaProduktow, umożliwiająca dostęp do listy produktów w koszyku.
-    /// </summary>
+    /// </value>
     public List<Produkt> ListaProduktow{ get => listaProduktow; set => listaProduktow = value; }
 
-    /// <summary>
+    /// <value>
     /// Właściwość Wartosc, umożliwiająca dostęp do wartości koszyka.
-    /// </summary>
+    /// </value>
     public double Wartosc{ get => wartosc; set => wartosc = value; }
 }
