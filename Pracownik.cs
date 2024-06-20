@@ -1,15 +1,32 @@
 using System;
+/// <summary>
+/// Klasa reprezentująca pracownika.
+/// </summary>
 class Pracownik{
     private string imie;
     private string nazwisko;
     private int id;
     private Magazyn magazyn;
+
+    /// <summary>
+    /// Konstruktor klasy Pracownik.
+    /// </summary>
+    /// <param name="imie">Imię pracownika.</param>
+    /// <param name="nazwisko">Nazwisko pracownika.</param>
+    /// <param name="id">Unikalne ID pracownika.</param>
+    /// <param name="magazyn">Magazyn, w którym pracuje pracownik.</param>
     public Pracownik(string imie, string nazwisko, int id, Magazyn magazyn){
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.id = id;
         this.magazyn = magazyn;
     }
+
+    /// <summary>
+    /// Metoda realizująca zamówienie o podanym numerze.
+    /// </summary>
+    /// <param name="numer">Numer zamówienia.</param>
+    /// <exception cref="ProduktIsNotAvailableException">Wyjątek rzucany, gdy produkt nie jest dostępny.</exception>
     public void realizaZamowienie(int numer){
         Zamowienie zamowienie = magazyn.znajdzZamowienie(numer);
         //Kompletowanie zamówienia produktami, które zostały zamówione, można dodać exception jak się okazuje jednak że nie ma produktu na stanie
@@ -25,6 +42,12 @@ class Pracownik{
         magazyn.ZamowieniaZrealizowane.Add(zamowienie);
         magazyn.ZamowieniaDoRealizacji.Remove(zamowienie);
     }
+
+    /// <summary>
+    /// Metoda zwracająca informacje o zamówieniach do realizacji.
+    /// </summary>
+    /// <param name="kurier">Kurier, który ma dostarczyć zamówienia.</param>
+    /// <exception cref="BrakZamowienDoWyslaniaException">Wyjątek rzucany, gdy nie ma zamówień do wysłania.</exception>
     public void zamowKuriera(Kurier kurier){
         if(magazyn.ZamowieniaZrealizowane.Count == 0){
             throw new BrakZamowienDoWyslaniaException("Brak zamowien do wyslania");
@@ -35,6 +58,20 @@ class Pracownik{
         }
         magazyn.ZamowieniaZrealizowane.Clear();
     }
+
+    /// <summary>
+    /// Metoda dodająca produkt do magazynu.
+    /// </summary>
+    /// <param name="nazwa">Nazwa produktu.</param>
+    /// <param name="id">Unikalne ID produktu.</param>
+    /// <param name="cena">Cena produktu.</param>
+    /// <param name="autor">Autor produktu.</param>
+    /// <param name="kategoria">Kategoria produktu.</param>
+    /// <param name="type">Typ produktu.</param>
+    /// <param name="stan">Stan produktu.</param>
+    /// <exception cref="WrongProductNameException">Wyjątek rzucany, gdy nie podano nazwy produktu.</exception>
+    /// <exception cref="WrongPriceException">Wyjątek rzucany, gdy cena produktu jest ujemna.</exception>
+    /// <exception cref="WrongTypeException">Wyjątek rzucany, gdy podano niepoprawny typ produktu.</exception>
     public void dodajProdukt(string nazwa, int id, double cena, string autor, string kategoria, int type, int stan){
         if(nazwa == null){
             throw new WrongProductNameException("Nie podano nazwy");
@@ -64,6 +101,12 @@ class Pracownik{
             }
         }
     }
+
+    /// <summary>
+    /// Metoda usuwająca produkt o podanym ID.
+    /// </summary>
+    /// <param name="id">ID produktu.</param>
+    /// <exception cref="ProduktDoesNotExistException">Wyjątek rzucany, gdy produkt o podanym ID nie istnieje.</exception>
     public void usunProdukt(int id){
         Produkt szukany = magazyn.znajdzProdukt(id);
         if(szukany == null){
@@ -71,6 +114,14 @@ class Pracownik{
         }
         magazyn.Produkty.Remove(szukany);
     }
+
+    /// <summary>
+    /// Metoda zmieniająca stan produktu o podanym ID.
+    /// </summary>
+    /// <param name="id">ID produktu.</param>
+    /// <param name="stan">Nowy stan produktu.</param>
+    /// <exception cref="ProduktDoesNotExistException">Wyjątek rzucany, gdy produkt o podanym ID nie istnieje.</exception>
+    /// <exception cref="ProduktIsNotPhysicalException">Wyjątek rzucany, gdy produkt nie jest fizyczny.</exception>
     public void ustawStan(int id, int stan){
         Produkt szukany = magazyn.znajdzProdukt(id);
         if(szukany == null){
