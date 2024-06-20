@@ -1,3 +1,6 @@
+///<summary>
+///Klasa definiująca Kuriera
+///</summary>
 class Kurier{
     private List<Zamowienie> zamowienia;
     private string nazwa;

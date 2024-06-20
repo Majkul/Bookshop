@@ -4,17 +4,17 @@
 class Magazyn{
     private int id;
 
-    /// <summary>
+    /// <value>
     /// Właściwość Id, umożliwiająca dostęp do ID magazynu.
-    /// </summary>
+    /// </value>
     public int Id
     {
         get { return id; }
     }
     private List<Produkt> produkty;
-    /// <summary>
+    /// <value>
     /// Właściwość Produkty, umożliwiająca dostęp do listy produktów w magazynie.
-    /// </summary>
+    /// </value>
     public List<Produkt> Produkty
     {
         get { return produkty; }
@@ -22,9 +22,9 @@ class Magazyn{
     }
     private List<Zamowienie> zamowieniaDoRealizacji;
     
-    /// <summary>
+    /// <value>
     /// Właściwość ZamowieniaDoRealizacji, umożliwiająca dostęp do listy zamówień do realizacji.
-    /// </summary>
+    /// </value>
     public List<Zamowienie> ZamowieniaDoRealizacji
     {
         get { return zamowieniaDoRealizacji; }
@@ -32,9 +32,9 @@ class Magazyn{
 
     private List<Zamowienie> zamowieniaZrealizowane;
 
-    /// <summary>
+    /// <value>
     /// Właściwość ZamowieniaZrealizowane, umożliwiająca dostęp do listy zamówień zrealizowanych.
-    /// </summary>
+    /// </value>
     public List<Zamowienie> ZamowieniaZrealizowane
     {
         get { return zamowieniaZrealizowane; }

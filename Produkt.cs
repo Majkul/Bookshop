@@ -22,25 +22,25 @@ abstract class Produkt{
         this.cena = cena;
     }
 
-    /// <summary>
+    /// <value>
     /// Właściwość Nazwa, umożliwiająca dostęp do nazwy produktu.
-    /// </summary>
+    /// </value>
     public string Nazwa{ get => nazwa; set => nazwa = value; }
-    /// <summary>
+    /// <value>
     /// Właściwość Id, umożliwiająca dostęp do ID produktu.
-    /// </summary>
+    /// </value>
     public int Id{ get => id; set => id = value; }
-    /// <summary>
+    /// <value>
     /// Właściwość Autor, umożliwiająca dostęp do autora produktu.
-    /// </summary>
+    /// </value>
     public string Autor{ get => autor; set => autor = value; }
-    /// <summary>
+    /// <value>
     /// Właściwość Kategoria, umożliwiająca dostęp do kategorii produktu.
-    /// </summary>
+    /// </value>
     public string Kategoria{ get => kategoria; set => kategoria = value; }
-    /// <summary>
+    /// <value>
     /// Właściwość Cena, umożliwiająca dostęp do ceny produktu.
-    /// </summary>
+    /// </value>
     public double Cena{ get => cena; set => cena = value; }
 
     /// <summary>
@@ -79,9 +79,9 @@ abstract class Fizyczne : Produkt{
         this.stan = stan;
     }
 
-    /// <summary>
+    /// <value>
     /// Właściwość Stan, umożliwiająca dostęp do stanu produktu fizycznego.
-    /// </summary>
+    /// </value>
     public int Stan{ get => stan; set => stan = value; }
 }
 
