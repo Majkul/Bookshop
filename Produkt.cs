@@ -32,7 +32,7 @@ abstract class Fizyczne : Produkt{
     protected int stan;
 
     public Fizyczne(string nazwa, int id, string autor, string kategoria, double cena, int stan) : base(nazwa, id, autor, kategoria, cena){
-        this.stan = 1;
+        this.stan = stan;
     }
 
     public int Stan{ get => stan; set => stan = value; }

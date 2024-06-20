@@ -36,7 +36,7 @@ class Pracownik{
         magazyn.ZamowieniaZrealizowane.Clear();
     }
     public void dodajProdukt(string nazwa, int id, double cena, string autor, string kategoria, int type, int stan){
-        if(nazwa == null){
+        if(nazwa == null || nazwa == ""){
             throw new WrongProductNameException("Nie podano nazwy");
         }
         if(cena < 0){

@@ -1,3 +1,5 @@
+using System.Net.Http.Headers;
+
 class Klient {
     private string imie, nazwisko, adres;
     private int id;
@@ -53,17 +55,16 @@ class Klient {
         koszyk.Wartosc += produkt.Cena;
     }
 
-    // public void usunZKoszyka(Produkt produkt){
-    //     koszyk.ListaProduktow.Remove(produkt);
-    //     koszyk.Wartosc -= produkt.Cena;
-    // }
-
-    public void usunZKoszyka(int index){
-        if (index < 0 || index >= koszyk.ListaProduktow.Count){
-            throw new ItemNotInKoszykException("Nie ma takiego produktu w koszyku");
+    public void usunZKoszyka(int id){
+        if (koszyk.ListaProduktow.Count == 0){
+            throw new KoszykIsEmptyException("Koszyk jest pusty");
         }
-        koszyk.Wartosc -= koszyk.ListaProduktow[index].Cena;
-        koszyk.ListaProduktow.RemoveAt(index);
+        Produkt produkt = koszyk.ListaProduktow.Find(x => x.Id == id);
+        if (produkt == null){
+            throw new ProduktDoesNotExistException("Produkt nie istnieje w koszyku");
+        }
+        koszyk.Wartosc -= produkt.Cena;
+        koszyk.ListaProduktow.Remove(produkt);
     }
 
     public string statusZamowienia(int numer){
@@ -78,7 +79,7 @@ class Klient {
             throw new KoszykIsEmptyException("Koszyk jest pusty");
         }
         foreach(Produkt produkt in koszyk.ListaProduktow){
-            Console.WriteLine(produkt.Nazwa + ": " + produkt.Cena.ToString("F") + "zl");
+            Console.WriteLine("[" + produkt.Id + "] " + produkt.Nazwa + ": " + produkt.Cena.ToString("F") + "zl");
         }
         Console.WriteLine("Wartosc koszyka: " + koszyk.Wartosc.ToString("F") + "zl");
     }
