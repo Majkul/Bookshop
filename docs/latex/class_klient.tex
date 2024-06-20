@@ -1,0 +1,310 @@
+\doxysection{Klient Class Reference}
+\hypertarget{class_klient}{}\label{class_klient}\index{Klient@{Klient}}
+
+
+Klasa reprezentująca klienta sklepu.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_klient_a42866b8923116e1a6ae117b960f72ad3}{Klient}} (string imie, string nazwisko, string adres, int id)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_klient}{Klient}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_klient_a4a374e48578b60555b7f2351a1470636}{zaplac}} (\mbox{\hyperlink{class_zamowienie}{Zamowienie}} zamowienie)
+\begin{DoxyCompactList}\small\item\em Metoda do zapłaty za zamówienie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_klient_a2c76c36b90ae0170a596e2fbad7be7f6}{zamow}} ()
+\begin{DoxyCompactList}\small\item\em Metoda do złożenia zamówienia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_klient_a77edf62b9662ddbca82beb0835bb7290}{dodaj\+Do\+Koszyka}} (\mbox{\hyperlink{class_produkt}{Produkt}} produkt)
+\begin{DoxyCompactList}\small\item\em Metoda do dodania produktu do koszyka. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_klient_a968fb7e57954fae2c8691330afd9d885}{usun\+ZKoszyka}} (int id)
+\begin{DoxyCompactList}\small\item\em Metoda do usunięcia produktu z koszyka. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_klient_aa6167a209173b90312050d406eb2dfda}{status\+Zamowienia}} (int numer)
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca status zamówienia o podanym numerze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_klient_a5fac7491e05aaf1949f93ac739711ad1}{przegladaj}} ()
+\begin{DoxyCompactList}\small\item\em Metoda do przeglądania zawartości koszyka. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_klient_a06359e5d87900307b1517cf964437b71}{Imie}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Właściwość Imie, umożliwiająca dostęp do imienia klienta. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_klient_a943fa4f924768eae1de7d2557cfb7f29}{Nazwisko}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Właściwość Nazwisko, umożliwiająca dostęp do nazwiska klienta. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_klient_a2558ee4991d3aab918898f8648bfa153}{Adres}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Właściwość Adres, umożliwiająca dostęp do adresu klienta. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_klient_a1ac07711b1a3975a85c19f90ca7c0624}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Właściwość Id, umożliwiająca dostęp do ID klienta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_koszyk}{Koszyk}} \mbox{\hyperlink{class_klient_a912b7db0f01d8d58c7d77e8d2e93c807}{Koszyk}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Właściwość \doxylink{class_koszyk}{Koszyk}, umożliwiająca dostęp do koszyka klienta. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_zamowienie}{Zamowienie}} $>$ \mbox{\hyperlink{class_klient_aeaebd16d014373b564bed50a0e88da34}{Zamowienia}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Właściwość Zamowienia, umożliwiająca dostęp do listy zamówień klienta. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca klienta sklepu. 
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00004}{4}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_klient_a42866b8923116e1a6ae117b960f72ad3}\index{Klient@{Klient}!Klient@{Klient}}
+\index{Klient@{Klient}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{Klient()}{Klient()}}
+{\footnotesize\ttfamily \label{class_klient_a42866b8923116e1a6ae117b960f72ad3} 
+Klient.\+Klient (\begin{DoxyParamCaption}\item[{string}]{imie}{, }\item[{string}]{nazwisko}{, }\item[{string}]{adres}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \doxylink{class_klient}{Klient}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em imie} & Imię klienta.\\
+\hline
+{\em nazwisko} & Nazwisko klienta.\\
+\hline
+{\em adres} & Adres klienta.\\
+\hline
+{\em id} & Unikalne ID klienta.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_klient_a77edf62b9662ddbca82beb0835bb7290}\index{Klient@{Klient}!dodajDoKoszyka@{dodajDoKoszyka}}
+\index{dodajDoKoszyka@{dodajDoKoszyka}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{dodajDoKoszyka()}{dodajDoKoszyka()}}
+{\footnotesize\ttfamily \label{class_klient_a77edf62b9662ddbca82beb0835bb7290} 
+void Klient.\+dodaj\+Do\+Koszyka (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_produkt}{Produkt}}}]{produkt}{}\end{DoxyParamCaption})}
+
+
+
+Metoda do dodania produktu do koszyka. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em produkt} & Dodawany produkt.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_produkt_is_not_available_exception}{Produkt\+Is\+Not\+Available\+Exception}} & Wyjątek rzucany, gdy produkt niedostępny.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00095}{95}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+\Hypertarget{class_klient_a5fac7491e05aaf1949f93ac739711ad1}\index{Klient@{Klient}!przegladaj@{przegladaj}}
+\index{przegladaj@{przegladaj}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{przegladaj()}{przegladaj()}}
+{\footnotesize\ttfamily \label{class_klient_a5fac7491e05aaf1949f93ac739711ad1} 
+void Klient.\+przegladaj (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Metoda do przeglądania zawartości koszyka. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_koszyk_is_empty_exception}{Koszyk\+Is\+Empty\+Exception}} & Wyjątek rzucany, gdy koszyk jest pusty.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00138}{138}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+\Hypertarget{class_klient_aa6167a209173b90312050d406eb2dfda}\index{Klient@{Klient}!statusZamowienia@{statusZamowienia}}
+\index{statusZamowienia@{statusZamowienia}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{statusZamowienia()}{statusZamowienia()}}
+{\footnotesize\ttfamily \label{class_klient_aa6167a209173b90312050d406eb2dfda} 
+string Klient.\+status\+Zamowienia (\begin{DoxyParamCaption}\item[{int}]{numer}{}\end{DoxyParamCaption})}
+
+
+
+Metoda zwracająca status zamówienia o podanym numerze. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numer} & Numer zamówienia.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status zamówienia.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_zamowienie_does_not_exist_exception}{Zamowienie\+Does\+Not\+Exist\+Exception}} & Wyjątek rzucany, gdy nie ma takiego zamówienia.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00127}{127}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+\Hypertarget{class_klient_a968fb7e57954fae2c8691330afd9d885}\index{Klient@{Klient}!usunZKoszyka@{usunZKoszyka}}
+\index{usunZKoszyka@{usunZKoszyka}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{usunZKoszyka()}{usunZKoszyka()}}
+{\footnotesize\ttfamily \label{class_klient_a968fb7e57954fae2c8691330afd9d885} 
+void Klient.\+usun\+ZKoszyka (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Metoda do usunięcia produktu z koszyka. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID produktu do usunięcia.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_koszyk_is_empty_exception}{Koszyk\+Is\+Empty\+Exception}} & Wyjątek rzucany, gdy koszyk jest pusty.\\
+\hline
+{\em \doxylink{class_produkt_does_not_exist_exception}{Produkt\+Does\+Not\+Exist\+Exception}} & Wyjątek rzucany, gdy produkt nie istnieje w koszyku.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00109}{109}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+\Hypertarget{class_klient_a2c76c36b90ae0170a596e2fbad7be7f6}\index{Klient@{Klient}!zamow@{zamow}}
+\index{zamow@{zamow}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{zamow()}{zamow()}}
+{\footnotesize\ttfamily \label{class_klient_a2c76c36b90ae0170a596e2fbad7be7f6} 
+void Klient.\+zamow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Metoda do złożenia zamówienia. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_koszyk_is_empty_exception}{Koszyk\+Is\+Empty\+Exception}} & Wyjątek rzucany, gdy koszyk jest pusty.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00079}{79}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+\Hypertarget{class_klient_a4a374e48578b60555b7f2351a1470636}\index{Klient@{Klient}!zaplac@{zaplac}}
+\index{zaplac@{zaplac}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{zaplac()}{zaplac()}}
+{\footnotesize\ttfamily \label{class_klient_a4a374e48578b60555b7f2351a1470636} 
+void Klient.\+zaplac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_zamowienie}{Zamowienie}}}]{zamowienie}{}\end{DoxyParamCaption})}
+
+
+
+Metoda do zapłaty za zamówienie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zamowienie} & Zamówienie, za które płacimy.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_platnosc_failed_exception}{Platnosc\+Failed\+Exception}} & Wyjątek rzucany, gdy płatność nieudana.\\
+\hline
+{\em \doxylink{class_zamowienie_is_oplacone_exception}{Zamowienie\+Is\+Oplacone\+Exception}} & Wyjątek rzucany, gdy zamówienie zostało już opłacone.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00062}{62}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_klient_a2558ee4991d3aab918898f8648bfa153}\index{Klient@{Klient}!Adres@{Adres}}
+\index{Adres@{Adres}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{Adres}{Adres}}
+{\footnotesize\ttfamily \label{class_klient_a2558ee4991d3aab918898f8648bfa153} 
+string Klient.\+Adres\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Właściwość Adres, umożliwiająca dostęp do adresu klienta. 
+
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+\Hypertarget{class_klient_a1ac07711b1a3975a85c19f90ca7c0624}\index{Klient@{Klient}!Id@{Id}}
+\index{Id@{Id}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily \label{class_klient_a1ac07711b1a3975a85c19f90ca7c0624} 
+int Klient.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Właściwość Id, umożliwiająca dostęp do ID klienta. 
+
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00044}{44}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+\Hypertarget{class_klient_a06359e5d87900307b1517cf964437b71}\index{Klient@{Klient}!Imie@{Imie}}
+\index{Imie@{Imie}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{Imie}{Imie}}
+{\footnotesize\ttfamily \label{class_klient_a06359e5d87900307b1517cf964437b71} 
+string Klient.\+Imie\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Właściwość Imie, umożliwiająca dostęp do imienia klienta. 
+
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+\Hypertarget{class_klient_a912b7db0f01d8d58c7d77e8d2e93c807}\index{Klient@{Klient}!Koszyk@{Koszyk}}
+\index{Koszyk@{Koszyk}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{Koszyk}{Koszyk}}
+{\footnotesize\ttfamily \label{class_klient_a912b7db0f01d8d58c7d77e8d2e93c807} 
+\mbox{\hyperlink{class_koszyk}{Koszyk}} Klient.\+Koszyk\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Właściwość \doxylink{class_koszyk}{Koszyk}, umożliwiająca dostęp do koszyka klienta. 
+
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+\Hypertarget{class_klient_a943fa4f924768eae1de7d2557cfb7f29}\index{Klient@{Klient}!Nazwisko@{Nazwisko}}
+\index{Nazwisko@{Nazwisko}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{Nazwisko}{Nazwisko}}
+{\footnotesize\ttfamily \label{class_klient_a943fa4f924768eae1de7d2557cfb7f29} 
+string Klient.\+Nazwisko\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Właściwość Nazwisko, umożliwiająca dostęp do nazwiska klienta. 
+
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+\Hypertarget{class_klient_aeaebd16d014373b564bed50a0e88da34}\index{Klient@{Klient}!Zamowienia@{Zamowienia}}
+\index{Zamowienia@{Zamowienia}!Klient@{Klient}}
+\doxysubsubsection{\texorpdfstring{Zamowienia}{Zamowienia}}
+{\footnotesize\ttfamily \label{class_klient_aeaebd16d014373b564bed50a0e88da34} 
+List$<$\mbox{\hyperlink{class_zamowienie}{Zamowienie}}$>$ Klient.\+Zamowienia\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Właściwość Zamowienia, umożliwiająca dostęp do listy zamówień klienta. 
+
+
+
+Definition at line \mbox{\hyperlink{_klient_8cs_source_l00054}{54}} of file \mbox{\hyperlink{_klient_8cs_source}{Klient.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/domin/\+One\+Drive/\+Pulpit/workspace/cs/project/\+Bookshop/Klient.\+cs\end{DoxyCompactItemize}

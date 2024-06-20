@@ -1,0 +1,74 @@
+\doxysection{C\+:/\+Users/domin/\+One\+Drive/\+Pulpit/workspace/cs/project/\+Bookshop/\+Wyjatki.cs}
+\hypertarget{_wyjatki_8cs_source}{}\label{_wyjatki_8cs_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00001}00001\ \textcolor{comment}{//Koszyk}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }Microsoft.VisualBasic;}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00004}\mbox{\hyperlink{class_koszyk_exception}{00004}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_koszyk_exception}{KoszykException}}\ :\ Exception\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_koszyk_exception}{KoszykException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00006}00006\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00007}\mbox{\hyperlink{class_koszyk_is_empty_exception}{00007}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_koszyk_is_empty_exception}{KoszykIsEmptyException}}\ :\ \mbox{\hyperlink{class_koszyk_exception}{KoszykException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_koszyk_is_empty_exception}{KoszykIsEmptyException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00010}\mbox{\hyperlink{class_item_not_in_koszyk_exception}{00010}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_item_not_in_koszyk_exception}{ItemNotInKoszykException}}\ :\ \mbox{\hyperlink{class_koszyk_exception}{KoszykException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_item_not_in_koszyk_exception}{ItemNotInKoszykException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00013}00013\ \textcolor{comment}{//Zamówienia}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00014}\mbox{\hyperlink{class_zamowienie_exception}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_zamowienie_exception}{ZamowienieException}}\ :\ Exception\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_zamowienie_exception}{ZamowienieException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00017}\mbox{\hyperlink{class_zamowienie_is_oplacone_exception}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_zamowienie_is_oplacone_exception}{ZamowienieIsOplaconeException}}\ :\ \mbox{\hyperlink{class_zamowienie_exception}{ZamowienieException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_zamowienie_is_oplacone_exception}{ZamowienieIsOplaconeException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00020}\mbox{\hyperlink{class_zamowienie_does_not_exist_exception}{00020}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_zamowienie_does_not_exist_exception}{ZamowienieDoesNotExistException}}\ :\ \mbox{\hyperlink{class_zamowienie_exception}{ZamowienieException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_zamowienie_does_not_exist_exception}{ZamowienieDoesNotExistException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00023}\mbox{\hyperlink{class_wrong_address_exception}{00023}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wrong_address_exception}{WrongAddressException}}\ :\ \mbox{\hyperlink{class_zamowienie_exception}{ZamowienieException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_wrong_address_exception}{WrongAddressException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00026}\mbox{\hyperlink{class_wrong_status_exception}{00026}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wrong_status_exception}{WrongStatusException}}\ :\ \mbox{\hyperlink{class_zamowienie_exception}{ZamowienieException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_wrong_status_exception}{WrongStatusException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00029}00029\ \textcolor{comment}{//Płatności}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00030}\mbox{\hyperlink{class_platnosc_exception}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_platnosc_exception}{PlatnoscException}}\ :\ Exception\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_platnosc_exception}{PlatnoscException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00033}\mbox{\hyperlink{class_platnosc_failed_exception}{00033}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_platnosc_failed_exception}{PlatnoscFailedException}}\ :\ \mbox{\hyperlink{class_platnosc_exception}{PlatnoscException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_platnosc_failed_exception}{PlatnoscFailedException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00036}00036\ \textcolor{comment}{//Produkty}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00037}\mbox{\hyperlink{class_produkt_exception}{00037}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_produkt_exception}{ProduktException}}\ :\ Exception\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_produkt_exception}{ProduktException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00040}\mbox{\hyperlink{class_produkt_does_not_exist_exception}{00040}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_produkt_does_not_exist_exception}{ProduktDoesNotExistException}}\ :\ \mbox{\hyperlink{class_produkt_exception}{ProduktException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_produkt_does_not_exist_exception}{ProduktDoesNotExistException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00043}\mbox{\hyperlink{class_produkt_is_not_available_exception}{00043}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_produkt_is_not_available_exception}{ProduktIsNotAvailableException}}\ :\ \mbox{\hyperlink{class_produkt_exception}{ProduktException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_produkt_is_not_available_exception}{ProduktIsNotAvailableException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00046}\mbox{\hyperlink{class_produkt_already_exists_exception}{00046}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_produkt_already_exists_exception}{ProduktAlreadyExistsException}}\ :\ \mbox{\hyperlink{class_produkt_exception}{ProduktException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_produkt_already_exists_exception}{ProduktAlreadyExistsException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00049}\mbox{\hyperlink{class_produkt_is_not_physical_exception}{00049}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_produkt_is_not_physical_exception}{ProduktIsNotPhysicalException}}\ :\ \mbox{\hyperlink{class_produkt_exception}{ProduktException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_produkt_is_not_physical_exception}{ProduktIsNotPhysicalException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00052}00052\ \textcolor{comment}{//Pracownik}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00053}\mbox{\hyperlink{class_pracownik_exception}{00053}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pracownik_exception}{PracownikException}}\ :\ Exception\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_pracownik_exception}{PracownikException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00056}\mbox{\hyperlink{class_brak_zamowien_do_wyslania_exception}{00056}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_brak_zamowien_do_wyslania_exception}{BrakZamowienDoWyslaniaException}}\ :\ \mbox{\hyperlink{class_pracownik_exception}{PracownikException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_brak_zamowien_do_wyslania_exception}{BrakZamowienDoWyslaniaException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00059}\mbox{\hyperlink{class_wrong_product_name_exception}{00059}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wrong_product_name_exception}{WrongProductNameException}}\ :\ \mbox{\hyperlink{class_pracownik_exception}{PracownikException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_wrong_product_name_exception}{WrongProductNameException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00061}00061\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00062}\mbox{\hyperlink{class_wrong_price_exception}{00062}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wrong_price_exception}{WrongPriceException}}\ :\ \mbox{\hyperlink{class_pracownik_exception}{PracownikException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_wrong_price_exception}{WrongPriceException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00065}\mbox{\hyperlink{class_wrong_type_exception}{00065}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wrong_type_exception}{WrongTypeException}}\ :\ \mbox{\hyperlink{class_pracownik_exception}{PracownikException}}\{}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_wrong_type_exception}{WrongTypeException}}(\textcolor{keywordtype}{string}\ message)\ :\ base(message)\{\}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_wyjatki_8cs_source_l00069}00069\ }
+
+\end{DoxyCode}

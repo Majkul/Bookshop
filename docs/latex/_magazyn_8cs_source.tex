@@ -1,0 +1,65 @@
+\doxysection{C\+:/\+Users/domin/\+One\+Drive/\+Pulpit/workspace/cs/project/\+Bookshop/\+Magazyn.cs}
+\hypertarget{_magazyn_8cs_source}{}\label{_magazyn_8cs_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00004}\mbox{\hyperlink{class_magazyn}{00004}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_magazyn}{Magazyn}}\{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00010}\mbox{\hyperlink{class_magazyn_aba2b5985d6ab0ca9dcf7244c8b3593df}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_magazyn_aba2b5985d6ab0ca9dcf7244c8b3593df}{Id}}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ id;\ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}\ List<Produkt>\ produkty;}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00018}\mbox{\hyperlink{class_magazyn_a7257a77fe161d05e22969f1afcf6bf0a}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Produkt>\ \mbox{\hyperlink{class_magazyn_a7257a77fe161d05e22969f1afcf6bf0a}{Produkty}}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ produkty;\ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ produkty\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ List<Zamowienie>\ zamowieniaDoRealizacji;}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00028}\mbox{\hyperlink{class_magazyn_a6c08381c26f42ff9acaa8143abac3b03}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Zamowienie>\ \mbox{\hyperlink{class_magazyn_a6c08381c26f42ff9acaa8143abac3b03}{ZamowieniaDoRealizacji}}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ zamowieniaDoRealizacji;\ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{private}\ List<Zamowienie>\ zamowieniaZrealizowane;}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00038}\mbox{\hyperlink{class_magazyn_afcf6256ef6afdfa253e3c4bbdd82bcd3}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Zamowienie>\ \mbox{\hyperlink{class_magazyn_afcf6256ef6afdfa253e3c4bbdd82bcd3}{ZamowieniaZrealizowane}}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ zamowieniaZrealizowane;\ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00050}\mbox{\hyperlink{class_magazyn_afbdc7866709314e07266c2bf1c4b7af6}{00050}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_magazyn_afbdc7866709314e07266c2bf1c4b7af6}{Magazyn}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ this.id\ =\ id;}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ produkty\ =\ \textcolor{keyword}{new}\ List<Produkt>();}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ zamowieniaDoRealizacji\ =\ \textcolor{keyword}{new}\ List<Zamowienie>();}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ zamowieniaZrealizowane\ =\ \textcolor{keyword}{new}\ List<Zamowienie>();}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00063}\mbox{\hyperlink{class_magazyn_aef56e527813875a7135e4c2c945b2550}{00063}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ \mbox{\hyperlink{class_magazyn_aef56e527813875a7135e4c2c945b2550}{znajdzZamowienie}}(\textcolor{keywordtype}{int}\ numer)\{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\ =\ zamowieniaDoRealizacji.Find(x\ =>\ x.Numer\ ==\ numer);}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(zamowienie\ ==\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_zamowienie_does_not_exist_exception}{ZamowienieDoesNotExistException}}(\textcolor{stringliteral}{"{}Nie\ ma\ takiego\ zamowienia"{}});}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ zamowienie;}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00077}\mbox{\hyperlink{class_magazyn_a41874e37956cfbc2964dc50125285a74}{00077}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_produkt}{Produkt}}\ \mbox{\hyperlink{class_magazyn_a41874e37956cfbc2964dc50125285a74}{znajdzProdukt}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_produkt}{Produkt}}\ produkt\ =\ produkty.Find(x\ =>\ x.Id\ ==\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(produkt\ ==\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_produkt_does_not_exist_exception}{ProduktDoesNotExistException}}(\textcolor{stringliteral}{"{}Nie\ ma\ takiego\ produktu\ w\ magazynie"{}});}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ produkt;}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00089}\mbox{\hyperlink{class_magazyn_a01088eb617e53173bdae99419929fa64}{00089}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_magazyn_a01088eb617e53173bdae99419929fa64}{dodajZamowienieDoMagazynu}}(\mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie)\{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zamowienie.\mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{Status}}\ ==\ \textcolor{stringliteral}{"{}Zaplacone"{}})\{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ zamowieniaDoRealizacji.Add(zamowienie);}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (zamowienie.\mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{Status}}\ ==\ \textcolor{stringliteral}{"{}Zrealizowane"{}}\ ||\ zamowienie.\mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{Status}}\ ==\ \textcolor{stringliteral}{"{}Wysłane"{}}\ ||\ zamowienie.\mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{Status}}\ ==\ \textcolor{stringliteral}{"{}Dostarczone"{}})\{}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ zamowieniaZrealizowane.Add(zamowienie);}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_magazyn_8cs_source_l00097}00097\ \}}
+
+\end{DoxyCode}
