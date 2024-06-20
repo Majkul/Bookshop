@@ -1,0 +1,421 @@
+\doxysection{C\+:/\+Users/domin/\+One\+Drive/\+Pulpit/workspace/cs/project/\+Bookshop/\+Program.cs}
+\hypertarget{_program_8cs_source}{}\label{_program_8cs_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Globalization;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00002}\mbox{\hyperlink{class_program}{00002}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_program}{Program}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00003}00003\ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00004}00004\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ List<Kurier>\ import\_kurierzy()\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00005}00005\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00006}00006\ \ \ \ \ \ \ \ \ List<Kurier>\ kurierzy\ =\ \textcolor{keyword}{new}\ List<Kurier>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00007}00007\ \ \ \ \ \ \ \ \ System.IO.StreamReader\ file\ =\ \textcolor{keyword}{new}\ System.IO.StreamReader(\textcolor{stringliteral}{@"{}..\(\backslash\)..\(\backslash\)..\(\backslash\)data\(\backslash\)kurierzy.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((line\ =\ file.ReadLine())\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00009}00009\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ words\ =\ line.Split(\textcolor{charliteral}{';'});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_kurier}{Kurier}}\ kurier\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_kurier}{Kurier}}(words[0]);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ kurierzy.Add(kurier);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ file.Close();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ kurierzy;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ List<Magazyn>\ import\_magazyny()\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ List<Magazyn>\ magazyny\ =\ \textcolor{keyword}{new}\ List<Magazyn>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ System.IO.StreamReader\ file\ =\ \textcolor{keyword}{new}\ System.IO.StreamReader(\textcolor{stringliteral}{@"{}..\(\backslash\)..\(\backslash\)..\(\backslash\)data\(\backslash\)magazyny.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((line\ =\ file.ReadLine())\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ words\ =\ line.Split(\textcolor{charliteral}{';'});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_magazyn}{Magazyn}}\ magazyn\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_magazyn}{Magazyn}}(\textcolor{keywordtype}{int}.Parse(words[0]));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ magazyny.Add(magazyn);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ file.Close();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ magazyny;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ List<Zamowienie>\ import\_zamowienia(List<Produkt>\ produkty)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ List<Zamowienie>\ zamowienia\ =\ \textcolor{keyword}{new}\ List<Zamowienie>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ System.IO.StreamReader\ file\ =\ \textcolor{keyword}{new}\ System.IO.StreamReader(\textcolor{stringliteral}{@"{}..\(\backslash\)..\(\backslash\)..\(\backslash\)data\(\backslash\)zamowienia.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((line\ =\ file.ReadLine())\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ words\ =\ line.Split(\textcolor{charliteral}{';'});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_zamowienie}{Zamowienie}}(\textcolor{keywordtype}{int}.Parse(words[0]),\ \textcolor{keywordtype}{int}.Parse(words[1]),\ \textcolor{keywordtype}{double}.Parse(words[3].Replace(\textcolor{charliteral}{','},\ \textcolor{charliteral}{'.'}),\ CultureInfo.InvariantCulture),\ DateTime.Parse(words[4]),\ DateTime.Parse(words[5]),\ words[6],\ words[7]);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\textcolor{keywordtype}{string}\ produkt\ \textcolor{keywordflow}{in}\ words[2].Split(\textcolor{charliteral}{','}))\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zamowienie.ListaProduktow.Add(produkty.Find(x\ =>\ x.Id\ ==\ \textcolor{keywordtype}{int}.Parse(produkt)));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ zamowienia.Add(zamowienie);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ file.Close();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ zamowienia;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ List<Pracownik>\ import\_pracownicy(List<Magazyn>\ magazyny)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ List<Pracownik>\ pracownicy\ =\ \textcolor{keyword}{new}\ List<Pracownik>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ System.IO.StreamReader\ file\ =\ \textcolor{keyword}{new}\ System.IO.StreamReader(\textcolor{stringliteral}{@"{}..\(\backslash\)..\(\backslash\)..\(\backslash\)data\(\backslash\)pracownicy.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((line\ =\ file.ReadLine())\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ words\ =\ line.Split(\textcolor{charliteral}{';'});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pracownik}{Pracownik}}\ pracownik\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_pracownik}{Pracownik}}(words[0],\ words[1],\ \textcolor{keywordtype}{int}.Parse(words[2]),\ magazyny.Find(x=>x.Id\ ==\ \textcolor{keywordtype}{int}.Parse(words[3])));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ pracownicy.Add(pracownik);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ file.Close();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pracownicy;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ List<Klient>\ import\_klienci()\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ List<Klient>\ klienci\ =\ \textcolor{keyword}{new}\ List<Klient>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ System.IO.StreamReader\ file\ =\ \textcolor{keyword}{new}\ System.IO.StreamReader(\textcolor{stringliteral}{@"{}..\(\backslash\)..\(\backslash\)..\(\backslash\)data\(\backslash\)klienci.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((line\ =\ file.ReadLine())\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ words\ =\ line.Split(\textcolor{charliteral}{';'});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_klient}{Klient}}\ klient\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_klient}{Klient}}(words[0],\ words[1],\ words[2],\ \textcolor{keywordtype}{int}.Parse(words[3]));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ klienci.Add(klient);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ file.Close();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ klienci;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ import\_produkty(\mbox{\hyperlink{class_pracownik}{Pracownik}}\ pracownik)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ System.IO.StreamReader\ file\ =\ \textcolor{keyword}{new}\ System.IO.StreamReader(\textcolor{stringliteral}{@"{}..\(\backslash\)..\(\backslash\)..\(\backslash\)data\(\backslash\)produkty.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((line\ =\ file.ReadLine())\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ words\ =\ line.Split(\textcolor{charliteral}{';'});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ pracownik.\mbox{\hyperlink{class_pracownik_a2fb646c0ee8bc4fa0fbbe2c82877382d}{dodajProdukt}}(words[0],\textcolor{keywordtype}{int}.Parse(words[1]),\textcolor{keywordtype}{double}.Parse(words[2].Replace(\textcolor{charliteral}{','},\ \textcolor{charliteral}{'.'}),\ CultureInfo.InvariantCulture),words[3],words[4],\textcolor{keywordtype}{int}.Parse(words[5]),\textcolor{keywordtype}{int}.Parse(words[6]));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ file.Close();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ render\_prod(\mbox{\hyperlink{class_magazyn}{Magazyn}}\ magazyn,\ \textcolor{keywordtype}{string}\ autor=\textcolor{stringliteral}{"{}"{}},\ \textcolor{keywordtype}{string}\ kategoria=\textcolor{stringliteral}{"{}"{}},\ \textcolor{keywordtype}{string}\ tytul=\textcolor{stringliteral}{"{}"{}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\ \ \ ID\ |\ Tytuł\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ Autor\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ Kategoria\ \ \ \ \ \ \ |\ Typ\ \ \ \ \ \ \ \ \ \ \ \ \ |\ Cena"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_produkt}{Produkt}}\ produkt\ \textcolor{keywordflow}{in}\ magazyn.\mbox{\hyperlink{class_magazyn_a7257a77fe161d05e22969f1afcf6bf0a}{Produkty}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(produkt\ is\ \mbox{\hyperlink{class_fizyczne}{Fizyczne}}\ \&\&\ ((\mbox{\hyperlink{class_fizyczne}{Fizyczne}})produkt).Stan\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(autor\ !=\ \textcolor{stringliteral}{"{}"{}}\ \&\&\ produkt.\mbox{\hyperlink{class_produkt_a9c2582bd5903dcc2b8903d278ec78814}{Autor}}\ !=\ autor)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(kategoria\ !=\ \textcolor{stringliteral}{"{}"{}}\ \&\&\ produkt.\mbox{\hyperlink{class_produkt_a78fb42ce1394aac2b1cf7adc051bf32d}{Kategoria}}\ !=\ kategoria)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tytul\ !=\ \textcolor{stringliteral}{"{}"{}}\ \&\&\ produkt.\mbox{\hyperlink{class_produkt_ab1554a53cdbaefdf2fb4064bc2d598d5}{Nazwa}}\ !=\ tytul)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ typ\ =\ produkt\ is\ \mbox{\hyperlink{class_twarda__okladka}{Twarda\_okladka}}\ ?\ \textcolor{stringliteral}{"{}Twarda\ okładka"{}}\ :\ produkt\ is\ \mbox{\hyperlink{class_miekka__okladka}{Miekka\_okladka}}\ ?\ \textcolor{stringliteral}{"{}Miękka\ okładka"{}}\ :\ produkt\ is\ \mbox{\hyperlink{class_audiobook}{Audiobook}}\ ?\ \textcolor{stringliteral}{"{}Audiobook"{}}\ :\ \textcolor{stringliteral}{"{}E\ Book"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(produkt.\mbox{\hyperlink{class_produkt_a992abd883e5878c8fc603c92abb624a3}{Id}}.ToString().PadLeft(5,\textcolor{charliteral}{'\ '})\ +\ \textcolor{stringliteral}{"{}\ |\ "{}}\ +\ produkt.\mbox{\hyperlink{class_produkt_ab1554a53cdbaefdf2fb4064bc2d598d5}{Nazwa}}.PadRight(30,\ \textcolor{charliteral}{'\ '})\ +\ \textcolor{stringliteral}{"{}\ |\ "{}}\ +\ produkt.\mbox{\hyperlink{class_produkt_a9c2582bd5903dcc2b8903d278ec78814}{Autor}}.PadRight(20,\ \textcolor{charliteral}{'\ '})\ +\ \textcolor{stringliteral}{"{}\ |\ "{}}\ +\ produkt.\mbox{\hyperlink{class_produkt_a78fb42ce1394aac2b1cf7adc051bf32d}{Kategoria}}.PadRight(15,\ \textcolor{charliteral}{'\ '})\ +\ \textcolor{stringliteral}{"{}\ |\ "{}}\ +\ typ.PadRight(15,\ \textcolor{charliteral}{'\ '})\ +\ \textcolor{stringliteral}{"{}\ |\ "{}}\ +\ produkt.\mbox{\hyperlink{class_produkt_a8e231ed0cd704b22f121e7fef81a0311}{Cena}}.ToString(\textcolor{stringliteral}{"{}F"{}}).PadLeft(5,\textcolor{charliteral}{'\ '})\ +\ \textcolor{stringliteral}{"{}\ zł"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00104}00104\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ save(\mbox{\hyperlink{class_magazyn}{Magazyn}}\ magazyn,\ List<Klient>\ klienci)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ System.IO.StreamWriter\ file\ =\ \textcolor{keyword}{new}\ System.IO.StreamWriter(\textcolor{stringliteral}{@"{}..\(\backslash\)..\(\backslash\)..\(\backslash\)data\(\backslash\)produkty.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_produkt}{Produkt}}\ produkt\ \textcolor{keywordflow}{in}\ magazyn.\mbox{\hyperlink{class_magazyn_a7257a77fe161d05e22969f1afcf6bf0a}{Produkty}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(produkt\ is\ \mbox{\hyperlink{class_fizyczne}{Fizyczne}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file.WriteLine(produkt.\mbox{\hyperlink{class_produkt_ab1554a53cdbaefdf2fb4064bc2d598d5}{Nazwa}}+\textcolor{stringliteral}{"{};"{}}+produkt.\mbox{\hyperlink{class_produkt_a992abd883e5878c8fc603c92abb624a3}{Id}}+\textcolor{stringliteral}{"{};"{}}+produkt.\mbox{\hyperlink{class_produkt_a8e231ed0cd704b22f121e7fef81a0311}{Cena}}+\textcolor{stringliteral}{"{};"{}}+produkt.\mbox{\hyperlink{class_produkt_a9c2582bd5903dcc2b8903d278ec78814}{Autor}}+\textcolor{stringliteral}{"{};"{}}+produkt.\mbox{\hyperlink{class_produkt_a78fb42ce1394aac2b1cf7adc051bf32d}{Kategoria}}+\textcolor{stringliteral}{"{};"{}}+(produkt\ is\ \mbox{\hyperlink{class_twarda__okladka}{Twarda\_okladka}}\ ?\ \textcolor{stringliteral}{"{}0"{}}\ :\ \textcolor{stringliteral}{"{}1"{}})+\textcolor{stringliteral}{"{};"{}}+((\mbox{\hyperlink{class_fizyczne}{Fizyczne}})produkt).Stan);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file.WriteLine(produkt.\mbox{\hyperlink{class_produkt_ab1554a53cdbaefdf2fb4064bc2d598d5}{Nazwa}}+\textcolor{stringliteral}{"{};"{}}+produkt.\mbox{\hyperlink{class_produkt_a992abd883e5878c8fc603c92abb624a3}{Id}}+\textcolor{stringliteral}{"{};"{}}+produkt.\mbox{\hyperlink{class_produkt_a8e231ed0cd704b22f121e7fef81a0311}{Cena}}+\textcolor{stringliteral}{"{};"{}}+produkt.\mbox{\hyperlink{class_produkt_a9c2582bd5903dcc2b8903d278ec78814}{Autor}}+\textcolor{stringliteral}{"{};"{}}+produkt.\mbox{\hyperlink{class_produkt_a78fb42ce1394aac2b1cf7adc051bf32d}{Kategoria}}+\textcolor{stringliteral}{"{};"{}}+(produkt\ is\ \mbox{\hyperlink{class_audiobook}{Audiobook}}\ ?\ \textcolor{stringliteral}{"{}2"{}}\ :\ \textcolor{stringliteral}{"{}3"{}})+\textcolor{stringliteral}{"{};1"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ file.Close();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ List<Zamowienie>\ zamowienia\ =\ klienci[0].Zamowienia;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ file\ =\ \textcolor{keyword}{new}\ System.IO.StreamWriter(\textcolor{stringliteral}{@"{}..\(\backslash\)..\(\backslash\)..\(\backslash\)data\(\backslash\)zamowienia.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\ \textcolor{keywordflow}{in}\ zamowienia)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ produkty\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_produkt}{Produkt}}\ produkt\ \textcolor{keywordflow}{in}\ zamowienie.\mbox{\hyperlink{class_zamowienie_ab924467a5a76de8a463e2f981a158b9e}{ListaProduktow}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ produkty\ +=\ produkt.Id\ +\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ produkty\ =\ produkty.Remove(produkty.Length-\/1);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ zamowienie.Link\ =\ zamowienie.Link\ ==\ \textcolor{stringliteral}{"{}"{}}\ ?\ \textcolor{stringliteral}{"{}none"{}}\ :\ zamowienie.\mbox{\hyperlink{class_zamowienie_a88c3e268075fe47fd35c12868525873a}{Link}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ file.WriteLine(zamowienie.\mbox{\hyperlink{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae}{Numer}}+\textcolor{stringliteral}{"{};"{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_a58b2083c2f7c62a35df12b5166191ad1}{IdKlienta}}+\textcolor{stringliteral}{"{};"{}}+produkty+\textcolor{stringliteral}{"{};"{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_a93562b1c3ff6132c049388dfca6e0f4a}{Wartosc}}+\textcolor{stringliteral}{"{};"{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_ad8a204b237b7dce5ab8714d7ce02cdc9}{DzienZamowienia}}+\textcolor{stringliteral}{"{};"{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_a6084c7ab010ff7db53ba7092980fd087}{OstatniaAktualizacja}}+\textcolor{stringliteral}{"{};"{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{Status}}+\textcolor{stringliteral}{"{};"{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_a88c3e268075fe47fd35c12868525873a}{Link}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ file.Close();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ file\ =\ \textcolor{keyword}{new}\ System.IO.StreamWriter(\textcolor{stringliteral}{@"{}..\(\backslash\)..\(\backslash\)..\(\backslash\)data\(\backslash\)magazyny.txt"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ zamowienia\_str\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(magazyn.\mbox{\hyperlink{class_magazyn_a6c08381c26f42ff9acaa8143abac3b03}{ZamowieniaDoRealizacji}}.Count\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ zamowienia\_str\ +=\ \textcolor{stringliteral}{"{};"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\ \textcolor{keywordflow}{in}\ magazyn.\mbox{\hyperlink{class_magazyn_a6c08381c26f42ff9acaa8143abac3b03}{ZamowieniaDoRealizacji}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ zamowienia\_str\ +=\ zamowienie.Numer\ +\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ zamowienia\_str\ =\ zamowienia\_str.Remove(zamowienia\_str.Length-\/1);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ zamowienia\_str\ +=\ \textcolor{stringliteral}{"{};"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\ \textcolor{keywordflow}{in}\ magazyn.\mbox{\hyperlink{class_magazyn_afcf6256ef6afdfa253e3c4bbdd82bcd3}{ZamowieniaZrealizowane}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ zamowienia\_str\ +=\ zamowienie.Numer\ +\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(magazyn.\mbox{\hyperlink{class_magazyn_afcf6256ef6afdfa253e3c4bbdd82bcd3}{ZamowieniaZrealizowane}}.Count\ !=\ 0)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ zamowienia\_str\ =\ zamowienia\_str.Remove(zamowienia\_str.Length-\/1);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ file.WriteLine(magazyn.\mbox{\hyperlink{class_magazyn_aba2b5985d6ab0ca9dcf7244c8b3593df}{Id}}.ToString()\ +\ \textcolor{stringliteral}{"{};"{}}\ +\ zamowienia\_str);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ file.Close();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00147}00147\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Main()}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00148}00148\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ List<Magazyn>\ magazyny\ =\ import\_magazyny();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ List<Pracownik>\ pracownicy\ =\ import\_pracownicy(magazyny);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ import\_produkty(pracownicy[0]);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ List<Produkt>\ produkty\ =\ magazyny[0].Produkty;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ List<Klient>\ klienci\ =\ import\_klienci();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ List<Zamowienie>\ zamowienia\ =\ import\_zamowienia(produkty);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ List<Kurier>\ kurierzy\ =\ import\_kurierzy();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_kurier}{Kurier}}\ kurier\ =\ kurierzy[0];}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\ \textcolor{keywordflow}{in}\ zamowienia)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ magazyny[0].dodajZamowienieDoMagazynu(zamowienie);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ klienci.Find(x\ =>\ x.Id\ ==\ zamowienie.\mbox{\hyperlink{class_zamowienie_a58b2083c2f7c62a35df12b5166191ad1}{IdKlienta}}).\mbox{\hyperlink{class_kurier_a27cb57102a53a3b0f58075448729d8e7}{Zamowienia}}.Add(zamowienie);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(zamowienie.\mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{Status}}\ ==\ \textcolor{stringliteral}{"{}Wyslane"{}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kurier.Zamowienia.Add(zamowienie);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_magazyn}{Magazyn}}\ magazyn\ =\ magazyny[0];}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pracownik}{Pracownik}}\ pracownik\ =\ pracownicy[0];}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_klient}{Klient}}\ klient\ =\ klienci[0];}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ wybor\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ logowanie\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numer\_zamowienia;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ filtr,\ f\_tytul,\ f\_autor,\ f\_kategoria;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(logowanie\ !=\ \textcolor{stringliteral}{"{}5"{}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Witaj!\ Wybierz\ jako\ kto\ chcesz\ się\ zalogować:\(\backslash\)n1.\ Klient\(\backslash\)n2.\ Pracownik\(\backslash\)n3.\ Kurier\(\backslash\)n4.\ Zapisz\ stan\(\backslash\)n5.\ Wyjdź"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ logowanie\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(logowanie)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}1"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wybor\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (wybor\ !=\ \textcolor{stringliteral}{"{}7"{}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filtr\ =\ f\_tytul\ =\ f\_autor\ =\ f\_kategoria\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)nWybierz\ opcję:\(\backslash\)n1.\ Przeglądaj\ produkty\(\backslash\)n2.\ Wyświetl\ koszyk\(\backslash\)n3.\ Usuń\ z\ koszyka\(\backslash\)n4.\ Złóż\ zamówienie\(\backslash\)n5.\ Opłać\ zamówienie\(\backslash\)n6.\ Sprawdź\ status\ zamówienia\(\backslash\)n7.\ Wyjdź"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wybor\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ numer;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(wybor)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}1"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(filtr\ !=\ \textcolor{stringliteral}{"{}4"{}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}1.\ Ustaw\ filtr\ tytuł\(\backslash\)n2.\ Ustaw\ filtr\ kategoria\(\backslash\)n3.\ Ustaw\ filtr\ autor\(\backslash\)n4.\ Zastosuj\ filtry"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ filtr\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(filtr)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}1"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ tytuł:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\_tytul\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}2"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ kategorię:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\_kategoria\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}3"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ autora:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\_autor\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}4"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ render\_prod(magazyn,\ f\_autor,\ f\_kategoria,\ f\_tytul);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ numer\ produktu,\ który\ chcesz\ dodać\ do\ koszyka.\ Jeżeli\ chcesz\ wrócić\ do\ menu,\ wciśnij\ ENTER:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ numer\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(numer\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ klient.\mbox{\hyperlink{class_klient_a77edf62b9662ddbca82beb0835bb7290}{dodajDoKoszyka}}(magazyn.\mbox{\hyperlink{class_magazyn_a41874e37956cfbc2964dc50125285a74}{znajdzProdukt}}(\textcolor{keywordtype}{int}.Parse(numer)));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}2"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Koszyk:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ klient.\mbox{\hyperlink{class_klient_a5fac7491e05aaf1949f93ac739711ad1}{przegladaj}}();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}3"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Koszyk:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ klient.\mbox{\hyperlink{class_klient_a5fac7491e05aaf1949f93ac739711ad1}{przegladaj}}();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ ID\ produktu,\ który\ chcesz\ usunąć\ z\ koszyka.\ Jeżeli\ chcesz\ wrócić\ do\ menu,\ wciśnij\ ENTER:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ numer\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(numer\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ klient.\mbox{\hyperlink{class_klient_a968fb7e57954fae2c8691330afd9d885}{usunZKoszyka}}(\textcolor{keywordtype}{int}.Parse(numer));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}4"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ klient.\mbox{\hyperlink{class_klient_a2c76c36b90ae0170a596e2fbad7be7f6}{zamow}}();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}5"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (klient.\mbox{\hyperlink{class_klient_aeaebd16d014373b564bed50a0e88da34}{Zamowienia}}.Find(x\ =>\ x.Status\ ==\ \textcolor{stringliteral}{"{}Oczekujace\ na\ zaplate"{}})\ ==\ \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Brak\ zamówień\ do\ opłacenia"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Wybierz\ id\ zamówienia\ do\ opłacenia:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\ \textcolor{keywordflow}{in}\ klient.\mbox{\hyperlink{class_klient_aeaebd16d014373b564bed50a0e88da34}{Zamowienia}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(zamowienie.\mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{Status}}\ ==\ \textcolor{stringliteral}{"{}Oczekujace\ na\ zaplate"{}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(zamowienie+\textcolor{stringliteral}{"{}\ ["{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae}{Numer}}\ +\ \textcolor{stringliteral}{"{}]\ cena:\ "{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_a93562b1c3ff6132c049388dfca6e0f4a}{Wartosc}}.ToString(\textcolor{stringliteral}{"{}F"{}})\ +\ \textcolor{stringliteral}{"{}\ zł"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ numer\_zamowienia\ =\ \textcolor{keywordtype}{int}.Parse(Console.ReadLine());}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\_oplacone\ =\ klient.\mbox{\hyperlink{class_klient_aeaebd16d014373b564bed50a0e88da34}{Zamowienia}}.Find(x\ =>\ x.Numer\ ==\ numer\_zamowienia);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ klient.\mbox{\hyperlink{class_klient_a4a374e48578b60555b7f2351a1470636}{zaplac}}(zamowienie\_oplacone);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zamowienie\_oplacone.\mbox{\hyperlink{class_zamowienie_ab924467a5a76de8a463e2f981a158b9e}{ListaProduktow}}.Exists(p\ =>\ p\ is\ \mbox{\hyperlink{class_cyfrowe}{Cyfrowe}}))\{\ \textcolor{comment}{//Jeżeli\ istnieje\ jakiś\ Cyfrowy\ to\ generuje\ link\ od\ razu}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zamowienie\_oplacone.\mbox{\hyperlink{class_zamowienie_af1285f72c1cb2be34cbf249a2be7f1e4}{generujLink}}();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zamowienie\_oplacone.\mbox{\hyperlink{class_zamowienie_ab924467a5a76de8a463e2f981a158b9e}{ListaProduktow}}.Exists(p\ =>\ p\ is\ \mbox{\hyperlink{class_fizyczne}{Fizyczne}}))\{\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ magazyn.\mbox{\hyperlink{class_magazyn_a6c08381c26f42ff9acaa8143abac3b03}{ZamowieniaDoRealizacji}}.Add(zamowienie\_oplacone);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zamowienie\_oplacone.\mbox{\hyperlink{class_zamowienie_a9c0c2cab9f6e8926d21cdce6a6fb9bb4}{zmienStatus}}(\textcolor{stringliteral}{"{}Zrealizowane"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(NullReferenceException)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Nie\ ma\ takiego\ zamówienia"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}6"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Lista\ twoich\ zamówień:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\ \textcolor{keywordflow}{in}\ klient.\mbox{\hyperlink{class_klient_aeaebd16d014373b564bed50a0e88da34}{Zamowienia}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Zamówienie\ numer\ "{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae}{Numer}}+\textcolor{stringliteral}{"{}:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_produkt}{Produkt}}\ produkt\ \textcolor{keywordflow}{in}\ zamowienie.\mbox{\hyperlink{class_zamowienie_ab924467a5a76de8a463e2f981a158b9e}{ListaProduktow}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(produkt.\mbox{\hyperlink{class_produkt_ab1554a53cdbaefdf2fb4064bc2d598d5}{Nazwa}}\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ produkt.\mbox{\hyperlink{class_produkt_a8e231ed0cd704b22f121e7fef81a0311}{Cena}}\ +\ \textcolor{stringliteral}{"{}\ zł"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.Write(zamowienie.\mbox{\hyperlink{class_zamowienie_a88c3e268075fe47fd35c12868525873a}{Link}}\ !=\ \textcolor{stringliteral}{"{}"{}}\ ?\ \textcolor{stringliteral}{"{}Link\ do\ cyfrowego\ produktu:\ "{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_a88c3e268075fe47fd35c12868525873a}{Link}}+\textcolor{stringliteral}{"{}\(\backslash\)n"{}}:\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Status:\ "{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{Status}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Data\ zamówienia:\ "{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_ad8a204b237b7dce5ab8714d7ce02cdc9}{DzienZamowienia}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Data\ ostatniej\ aktualizacji\ statusu:\ "{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_a6084c7ab010ff7db53ba7092980fd087}{OstatniaAktualizacja}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}7"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Niepoprawny\ wybór"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}2"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wybor\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(wybor\ !=\ \textcolor{stringliteral}{"{}6"{}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Wybierz\ opcję:\(\backslash\)n1.\ Zrealizuj\ zamówienie\(\backslash\)n2.\ Zamów\ kuriera\(\backslash\)n3.\ Dodaj\ produkt\(\backslash\)n4.\ Ustaw\ stan\ produktu\(\backslash\)n5.\ Usuń\ produkt\(\backslash\)n6.\ Wyjdź"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wybor\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (wybor)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}1"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Wybierz\ id\ zamówienia\ do\ zrealizowania:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\ \textcolor{keywordflow}{in}\ magazyn.\mbox{\hyperlink{class_magazyn_a6c08381c26f42ff9acaa8143abac3b03}{ZamowieniaDoRealizacji}})\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(zamowienie+\textcolor{stringliteral}{"{}\ numer:\ "{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae}{Numer}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ numer\_zamowienia\ =\ \textcolor{keywordtype}{int}.Parse(Console.ReadLine());}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pracownik.\mbox{\hyperlink{class_pracownik_adb980262599e883883228e3b0017602e}{realizaZamowienie}}(numer\_zamowienia);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}2"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pracownik.\mbox{\hyperlink{class_pracownik_ab9b6776bf4facb6bf146099be23aa6f7}{zamowKuriera}}(kurier);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}3"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ stan\_p;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Wybierz\ jaki\ produkt\ chcesz\ dodać:\(\backslash\)n1.\ Książkę\ z\ twardą\ okładką\(\backslash\)n2.\ Książkę\ z\ miękką\ okładką\(\backslash\)n3.\ Audiobook\(\backslash\)n4.\ E\_Book\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ type\ =\ \textcolor{keywordtype}{int}.Parse(Console.ReadLine())-\/1;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ nazwę\ produktu:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ nazwa\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ id\ produktu:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \textcolor{keywordtype}{int}.Parse(Console.ReadLine());}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ cenę\ produktu:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cena\ =\ \textcolor{keywordtype}{double}.Parse(Console.ReadLine().Replace(\textcolor{charliteral}{','},\ \textcolor{charliteral}{'.'}),\ CultureInfo.InvariantCulture);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ autora\ produktu:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ autor\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ kategorię\ do\ której\ zalicza\ się\ produkt:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ kategoria\ =\ Console.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ <\ 2)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ stan\ produktu:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stan\_p\ =\ \textcolor{keywordtype}{int}.Parse(Console.ReadLine());}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stan\_p\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pracownik.\mbox{\hyperlink{class_pracownik_a2fb646c0ee8bc4fa0fbbe2c82877382d}{dodajProdukt}}(nazwa,\ \textcolor{keywordtype}{id},\ cena,\ autor,\ kategoria,\ type,\ stan\_p);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}4"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ ID\ produktu,\ którego\ stan\ chcesz\ zmienić:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \textcolor{keywordtype}{int}.Parse(Console.ReadLine());}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ nowy\ stan\ produktu:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ stan\ =\ \textcolor{keywordtype}{int}.Parse(Console.ReadLine());}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pracownik.\mbox{\hyperlink{class_pracownik_a8f218588e7070dc1927d2884149e3947}{ustawStan}}(\textcolor{keywordtype}{id},\ stan);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}5"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Podaj\ ID\ produktu,\ który\ chcesz\ usunąć:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \textcolor{keywordtype}{int}.Parse(Console.ReadLine());}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pracownik.\mbox{\hyperlink{class_pracownik_adbd01573009f98172185d1c86896d266}{usunProdukt}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}6"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Wyjdź"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Niepoprawny\ wybór"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}3"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Lista\ zamówień\ do\ dostarczenia:"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ zamowienie\ \textcolor{keywordflow}{in}\ kurier.Zamowienia)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(zamowienie+\textcolor{stringliteral}{"{}\ numer:\ "{}}+zamowienie.\mbox{\hyperlink{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae}{Numer}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ numer\_zamowienia\ =\ \textcolor{keywordtype}{int}.Parse(Console.ReadLine());}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kurier.dostarcz(kurier.Zamowienia.Find(x\ =>\ x.Numer\ ==\ numer\_zamowienia));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(NullReferenceException)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Nie\ ma\ takiego\ zamówienia"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}(Exception\ e)\{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.Message);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}4"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ save(magazyn,\ klienci);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}5"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Niepoprawny\ wybór"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00415}00415\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00416}00416\ \}}
+
+\end{DoxyCode}

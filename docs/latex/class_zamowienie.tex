@@ -1,0 +1,295 @@
+\doxysection{Zamowienie Class Reference}
+\hypertarget{class_zamowienie}{}\label{class_zamowienie}\index{Zamowienie@{Zamowienie}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_zamowienie_a55c00b355549ebab056be1e91fc523cf}{Equals}} (object obj)
+\item 
+\mbox{\hyperlink{class_zamowienie_ad6617150cc6f3d582bf0706e8500d3fd}{Zamowienie}} (\mbox{\hyperlink{class_koszyk}{Koszyk}} koszyk, int id\+Klienta, string adres)
+\begin{DoxyCompactList}\small\item\em Jeden z Konstruktorów. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_zamowienie_a060a3bd1b7ccafb4c42f738190c40076}{Zamowienie}} (int numer, int id\+Klienta, double wartosc, Date\+Time dzien\+Zamowienia, Date\+Time ostatnia\+Aktualizacja, string status, string link)
+\begin{DoxyCompactList}\small\item\em Konstruktor używany podczas wczytywania plików. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_zamowienie_a9c0c2cab9f6e8926d21cdce6a6fb9bb4}{zmien\+Status}} (string status)
+\begin{DoxyCompactList}\small\item\em Zmienia status zamówienia. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_zamowienie_af1285f72c1cb2be34cbf249a2be7f1e4}{generuj\+Link}} ()
+\begin{DoxyCompactList}\small\item\em Generuje link do cyfrowego produktu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae}{Numer}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em {\ttfamily Numer} zamówienia.\end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_zamowienie_a58b2083c2f7c62a35df12b5166191ad1}{Id\+Klienta}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em {\ttfamily Id Klienta} zamówienia. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{Status}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em {\ttfamily Status} zamówienia. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_zamowienie_acb4a6ea951cc424bff1ae0c18f12a1dc}{Adres}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em {\ttfamily Adres}, do którego zamówienie będzie dostarczane.\end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_zamowienie_ad8a204b237b7dce5ab8714d7ce02cdc9}{Dzien\+Zamowienia}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Dzień, w którym było składane zamówienie. \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_zamowienie_a6084c7ab010ff7db53ba7092980fd087}{Ostatnia\+Aktualizacja}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Dzień, w którym zamówienie było ostanio aktualizowane. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_produkt}{Produkt}} $>$ \mbox{\hyperlink{class_zamowienie_ab924467a5a76de8a463e2f981a158b9e}{Lista\+Produktow}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em {\ttfamily Lista Prodktów}, zamówienia. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_zamowienie_a93562b1c3ff6132c049388dfca6e0f4a}{Wartosc}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em {\ttfamily Wartość}, całego zamówienia. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_zamowienie_a88c3e268075fe47fd35c12868525873a}{Link}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em {\ttfamily Link} do produktów cyfrowych \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_zamowienie_ad6617150cc6f3d582bf0706e8500d3fd}\index{Zamowienie@{Zamowienie}!Zamowienie@{Zamowienie}}
+\index{Zamowienie@{Zamowienie}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{Zamowienie()}{Zamowienie()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_zamowienie_ad6617150cc6f3d582bf0706e8500d3fd} 
+Zamowienie.\+Zamowienie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_koszyk}{Koszyk}}}]{koszyk}{, }\item[{int}]{id\+Klienta}{, }\item[{string}]{adres}{}\end{DoxyParamCaption})}
+
+
+
+Jeden z Konstruktorów. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em koszyk} & \doxylink{class_koszyk}{Koszyk}, z którego produkty sa zamawianie.\\
+\hline
+{\em id\+Klienta} & Id Klienta, do którego należy zamówienie.\\
+\hline
+{\em Adres} & Adres, gdzie dostarczyć zamówienie.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_koszyk_is_empty_exception}{Koszyk\+Is\+Empty\+Exception}} & Wyrzucany jest gdy koszyk jest pusty. \\
+\hline
+{\em \doxylink{class_wrong_address_exception}{Wrong\+Address\+Exception}} & Wyrzucany jest gdy adres do dostawy nie istnieje czyt\+: adres jest "{}"{}, albo zlozony jest tylko z "{}white spaces"{}, to NIE wykrywa czy miejsce adresu nie istnieje, np Hogwarts. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00112}{112}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_a060a3bd1b7ccafb4c42f738190c40076}\index{Zamowienie@{Zamowienie}!Zamowienie@{Zamowienie}}
+\index{Zamowienie@{Zamowienie}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{Zamowienie()}{Zamowienie()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_zamowienie_a060a3bd1b7ccafb4c42f738190c40076} 
+Zamowienie.\+Zamowienie (\begin{DoxyParamCaption}\item[{int}]{numer}{, }\item[{int}]{id\+Klienta}{, }\item[{double}]{wartosc}{, }\item[{Date\+Time}]{dzien\+Zamowienia}{, }\item[{Date\+Time}]{ostatnia\+Aktualizacja}{, }\item[{string}]{status}{, }\item[{string}]{link}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor używany podczas wczytywania plików. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numer} & Numer zamówienia. \\
+\hline
+{\em id\+Klienta} & ID klienta, który zkładał te zamówienie. \\
+\hline
+{\em wartosc} & Wartość całego zamówienia. \\
+\hline
+{\em dzien\+Zamowienia} & Czas, w którym było złozone zamówienie. \\
+\hline
+{\em ostatnia\+Aktualizacja} & Czas, kiedy ostatnio zamówienie było aktualizowane. \\
+\hline
+{\em status} & Status, w jakim zamówienie sie aktualnie znajduje. \\
+\hline
+{\em link} & Link do produktow cyfrowych zamówienia. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00151}{151}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_zamowienie_a55c00b355549ebab056be1e91fc523cf}\index{Zamowienie@{Zamowienie}!Equals@{Equals}}
+\index{Equals@{Equals}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily \label{class_zamowienie_a55c00b355549ebab056be1e91fc523cf} 
+override bool Zamowienie.\+Equals (\begin{DoxyParamCaption}\item[{object}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00073}{73}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_af1285f72c1cb2be34cbf249a2be7f1e4}\index{Zamowienie@{Zamowienie}!generujLink@{generujLink}}
+\index{generujLink@{generujLink}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{generujLink()}{generujLink()}}
+{\footnotesize\ttfamily \label{class_zamowienie_af1285f72c1cb2be34cbf249a2be7f1e4} 
+string Zamowienie.\+generuj\+Link (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Generuje link do cyfrowego produktu. 
+
+\begin{DoxyReturn}{Returns}
+Link do cyfrowego produktu.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00187}{187}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_a9c0c2cab9f6e8926d21cdce6a6fb9bb4}\index{Zamowienie@{Zamowienie}!zmienStatus@{zmienStatus}}
+\index{zmienStatus@{zmienStatus}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{zmienStatus()}{zmienStatus()}}
+{\footnotesize\ttfamily \label{class_zamowienie_a9c0c2cab9f6e8926d21cdce6a6fb9bb4} 
+void Zamowienie.\+zmien\+Status (\begin{DoxyParamCaption}\item[{string}]{status}{}\end{DoxyParamCaption})}
+
+
+
+Zmienia status zamówienia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & Nowy status zamówienia.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_wrong_status_exception}{Wrong\+Status\+Exception}} & Wyrzucany jest gdy status jest niepoprawy czyt\+: status jest "{}"{} albo składa sie z "{}white spaces"{} \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00171}{171}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_zamowienie_acb4a6ea951cc424bff1ae0c18f12a1dc}\index{Zamowienie@{Zamowienie}!Adres@{Adres}}
+\index{Adres@{Adres}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{Adres}{Adres}}
+{\footnotesize\ttfamily \label{class_zamowienie_acb4a6ea951cc424bff1ae0c18f12a1dc} 
+string Zamowienie.\+Adres\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+{\ttfamily Adres}, do którego zamówienie będzie dostarczane.
+
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_ad8a204b237b7dce5ab8714d7ce02cdc9}\index{Zamowienie@{Zamowienie}!DzienZamowienia@{DzienZamowienia}}
+\index{DzienZamowienia@{DzienZamowienia}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{DzienZamowienia}{DzienZamowienia}}
+{\footnotesize\ttfamily \label{class_zamowienie_ad8a204b237b7dce5ab8714d7ce02cdc9} 
+Date\+Time Zamowienie.\+Dzien\+Zamowienia\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Dzień, w którym było składane zamówienie. 
+
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_a58b2083c2f7c62a35df12b5166191ad1}\index{Zamowienie@{Zamowienie}!IdKlienta@{IdKlienta}}
+\index{IdKlienta@{IdKlienta}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{IdKlienta}{IdKlienta}}
+{\footnotesize\ttfamily \label{class_zamowienie_a58b2083c2f7c62a35df12b5166191ad1} 
+int Zamowienie.\+Id\+Klienta\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+{\ttfamily Id Klienta} zamówienia. 
+
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_a88c3e268075fe47fd35c12868525873a}\index{Zamowienie@{Zamowienie}!Link@{Link}}
+\index{Link@{Link}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{Link}{Link}}
+{\footnotesize\ttfamily \label{class_zamowienie_a88c3e268075fe47fd35c12868525873a} 
+string Zamowienie.\+Link\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+{\ttfamily Link} do produktów cyfrowych 
+
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00086}{86}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_ab924467a5a76de8a463e2f981a158b9e}\index{Zamowienie@{Zamowienie}!ListaProduktow@{ListaProduktow}}
+\index{ListaProduktow@{ListaProduktow}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{ListaProduktow}{ListaProduktow}}
+{\footnotesize\ttfamily \label{class_zamowienie_ab924467a5a76de8a463e2f981a158b9e} 
+List$<$\mbox{\hyperlink{class_produkt}{Produkt}}$>$ Zamowienie.\+Lista\+Produktow\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+{\ttfamily Lista Prodktów}, zamówienia. 
+
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00057}{57}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae}\index{Zamowienie@{Zamowienie}!Numer@{Numer}}
+\index{Numer@{Numer}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{Numer}{Numer}}
+{\footnotesize\ttfamily \label{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae} 
+int Zamowienie.\+Numer\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+{\ttfamily Numer} zamówienia.
+
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_a6084c7ab010ff7db53ba7092980fd087}\index{Zamowienie@{Zamowienie}!OstatniaAktualizacja@{OstatniaAktualizacja}}
+\index{OstatniaAktualizacja@{OstatniaAktualizacja}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{OstatniaAktualizacja}{OstatniaAktualizacja}}
+{\footnotesize\ttfamily \label{class_zamowienie_a6084c7ab010ff7db53ba7092980fd087} 
+Date\+Time Zamowienie.\+Ostatnia\+Aktualizacja\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Dzień, w którym zamówienie było ostanio aktualizowane. 
+
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}\index{Zamowienie@{Zamowienie}!Status@{Status}}
+\index{Status@{Status}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \label{class_zamowienie_a6ac3c4219c35e20e676725c169465fba} 
+string Zamowienie.\+Status\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+{\ttfamily Status} zamówienia. 
+
+
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+\Hypertarget{class_zamowienie_a93562b1c3ff6132c049388dfca6e0f4a}\index{Zamowienie@{Zamowienie}!Wartosc@{Wartosc}}
+\index{Wartosc@{Wartosc}!Zamowienie@{Zamowienie}}
+\doxysubsubsection{\texorpdfstring{Wartosc}{Wartosc}}
+{\footnotesize\ttfamily \label{class_zamowienie_a93562b1c3ff6132c049388dfca6e0f4a} 
+double Zamowienie.\+Wartosc\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+{\ttfamily Wartość}, całego zamówienia. 
+
+summary\texorpdfstring{$>$}{>} Override porównania 2 zamowień, porównoje numer zamowień. /summary\texorpdfstring{$>$}{>} 
+
+Definition at line \mbox{\hyperlink{_zamowienie_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_zamowienie_8cs_source}{Zamowienie.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/domin/\+One\+Drive/\+Pulpit/workspace/cs/project/\+Bookshop/Zamowienie.\+cs\end{DoxyCompactItemize}

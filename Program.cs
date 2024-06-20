@@ -1,4 +1,4 @@
-﻿
+﻿using System.Globalization;
 class Program
 {
     static public List<Kurier> import_kurierzy(){
@@ -34,7 +34,7 @@ class Program
         while((line = file.ReadLine()) != null)
         {
             string[] words = line.Split(';');
-            Zamowienie zamowienie = new Zamowienie(int.Parse(words[0]), int.Parse(words[1]), double.Parse(words[3]), DateTime.Parse(words[4]), DateTime.Parse(words[5]), words[6], words[7]);
+            Zamowienie zamowienie = new Zamowienie(int.Parse(words[0]), int.Parse(words[1]), double.Parse(words[3].Replace(',', '.'), CultureInfo.InvariantCulture), DateTime.Parse(words[4]), DateTime.Parse(words[5]), words[6], words[7]);
             foreach(string produkt in words[2].Split(',')){
                 zamowienie.ListaProduktow.Add(produkty.Find(x => x.Id == int.Parse(produkt)));
             }
@@ -76,7 +76,7 @@ class Program
         while((line = file.ReadLine()) != null)
         {
             string[] words = line.Split(';');
-            pracownik.dodajProdukt(words[0],int.Parse(words[1]),double.Parse(words[2]),words[3],words[4],int.Parse(words[5]),int.Parse(words[6]));
+            pracownik.dodajProdukt(words[0],int.Parse(words[1]),double.Parse(words[2].Replace(',', '.'), CultureInfo.InvariantCulture),words[3],words[4],int.Parse(words[5]),int.Parse(words[6]));
         }
 
         file.Close();
@@ -176,10 +176,11 @@ class Program
                 case "1":
                     wybor = "";
 
-                    while (wybor != "6"){
+                    while (wybor != "7"){
                         filtr = f_tytul = f_autor = f_kategoria = "";
-                        Console.WriteLine("\nWybierz opcję:\n1. Przeglądaj produkty\n2. Wyświetl koszyk\n3. Złóż zamówienie\n4. Opłać zamówienie\n5. Sprawdź status zamówienia\n6. Wyjdź");
+                        Console.WriteLine("\nWybierz opcję:\n1. Przeglądaj produkty\n2. Wyświetl koszyk\n3. Usuń z koszyka\n4. Złóż zamówienie\n5. Opłać zamówienie\n6. Sprawdź status zamówienia\n7. Wyjdź");
                         wybor = Console.ReadLine();
+                        string numer;
                         switch(wybor){
                             case "1":
                                 while(filtr != "4"){
@@ -205,7 +206,7 @@ class Program
                                 }
 
                                 Console.WriteLine("Podaj numer produktu, który chcesz dodać do koszyka. Jeżeli chcesz wrócić do menu, wciśnij ENTER:");
-                                string numer = Console.ReadLine();
+                                numer = Console.ReadLine();
                                 if(numer == "") break;
                                 try{
                                     klient.dodajDoKoszyka(magazyn.znajdzProdukt(int.Parse(numer)));
@@ -215,10 +216,27 @@ class Program
                                 }
                                 break;
                             case "2":
-                                Console.WriteLine("Koszyk:");
-                                klient.przegladaj();
+                                try{
+                                    Console.WriteLine("Koszyk:");
+                                    klient.przegladaj();
+                                } catch (Exception e){
+                                    Console.WriteLine(e.Message);
+                                }
                                 break;
                             case "3":
+                                try{
+                                    Console.WriteLine("Koszyk:");
+                                    klient.przegladaj();
+                                Console.WriteLine("Podaj ID produktu, który chcesz usunąć z koszyka. Jeżeli chcesz wrócić do menu, wciśnij ENTER:");
+                                numer = Console.ReadLine();
+
+                                if(numer == "") break;
+                                klient.usunZKoszyka(int.Parse(numer));
+                                } catch(Exception e){
+                                    Console.WriteLine(e.Message);
+                                }
+                                break;
+                            case "4":
                                 try{
                                     klient.zamow();
                                 }
@@ -226,7 +244,7 @@ class Program
                                     Console.WriteLine(e.Message);
                                 }
                                 break;
-                            case "4":
+                            case "5":
                                 if (klient.Zamowienia.Find(x => x.Status == "Oczekujace na zaplate") == null){
                                     Console.WriteLine("Brak zamówień do opłacenia");
                                     break;
@@ -258,7 +276,7 @@ class Program
                                     Console.WriteLine(e.Message);
                                 }
                                 break;
-                            case "5":
+                            case "6":
                                 Console.WriteLine("Lista twoich zamówień:");
                                 foreach(Zamowienie zamowienie in klient.Zamowienia){
                                     Console.WriteLine("Zamówienie numer "+zamowienie.Numer+":");
@@ -271,6 +289,11 @@ class Program
                                     Console.WriteLine("Data ostatniej aktualizacji statusu: "+zamowienie.OstatniaAktualizacja);
                                     Console.WriteLine();
                                 }
+                                break;
+                            case "7":
+                                break;
+                            default:
+                                Console.WriteLine("Niepoprawny wybór");
                                 break;
                         }
                     }
@@ -313,7 +336,7 @@ class Program
                                 Console.WriteLine("Podaj id produktu:");
                                 id = int.Parse(Console.ReadLine());
                                 Console.WriteLine("Podaj cenę produktu:");
-                                double cena = double.Parse(Console.ReadLine());
+                                double cena = double.Parse(Console.ReadLine().Replace(',', '.'), CultureInfo.InvariantCulture);
                                 Console.WriteLine("Podaj autora produktu:");
                                 string autor = Console.ReadLine();
                                 Console.WriteLine("Podaj kategorię do której zalicza się produkt:");

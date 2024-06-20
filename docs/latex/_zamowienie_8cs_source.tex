@@ -1,0 +1,149 @@
+\doxysection{C\+:/\+Users/domin/\+One\+Drive/\+Pulpit/workspace/cs/project/\+Bookshop/\+Zamowienie.cs}
+\hypertarget{_zamowienie_8cs_source}{}\label{_zamowienie_8cs_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Data.Common;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Dynamic;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00005}\mbox{\hyperlink{class_zamowienie}{00005}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_zamowienie}{Zamowienie}}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ numerZamowienia\ =\ 10568;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ numer;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00010}\mbox{\hyperlink{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae}{00010}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae}{Numer}}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.numer;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ idKlienta;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00017}\mbox{\hyperlink{class_zamowienie_a58b2083c2f7c62a35df12b5166191ad1}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_zamowienie_a58b2083c2f7c62a35df12b5166191ad1}{IdKlienta}}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.idKlienta;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ status;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00024}\mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_zamowienie_a6ac3c4219c35e20e676725c169465fba}{Status}}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.status;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ this.status\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ adres;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00034}\mbox{\hyperlink{class_zamowienie_acb4a6ea951cc424bff1ae0c18f12a1dc}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_zamowienie_acb4a6ea951cc424bff1ae0c18f12a1dc}{Adres}}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.adres;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{private}\ DateTime\ dzienZamowienia;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00042}\mbox{\hyperlink{class_zamowienie_ad8a204b237b7dce5ab8714d7ce02cdc9}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_zamowienie_ad8a204b237b7dce5ab8714d7ce02cdc9}{DzienZamowienia}}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.dzienZamowienia;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{private}\ DateTime\ ostatniaAktualizacja;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00049}\mbox{\hyperlink{class_zamowienie_a6084c7ab010ff7db53ba7092980fd087}{00049}}\ \ \ \ \ \textcolor{keyword}{public}\ DateTime\ \mbox{\hyperlink{class_zamowienie_a6084c7ab010ff7db53ba7092980fd087}{OstatniaAktualizacja}}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.ostatniaAktualizacja;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{private}\ List<Produkt>\ listaProduktow;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00057}\mbox{\hyperlink{class_zamowienie_ab924467a5a76de8a463e2f981a158b9e}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Produkt>\ \mbox{\hyperlink{class_zamowienie_ab924467a5a76de8a463e2f981a158b9e}{ListaProduktow}}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.listaProduktow;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{double}\ wartosc;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00064}\mbox{\hyperlink{class_zamowienie_a93562b1c3ff6132c049388dfca6e0f4a}{00064}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_zamowienie_a93562b1c3ff6132c049388dfca6e0f4a}{Wartosc}}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.wartosc;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ Equals(\textcolor{keywordtype}{object}\ obj)}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ ==\ \textcolor{keyword}{null}\ ||\ GetType()\ !=\ obj.GetType())}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_zamowienie}{Zamowienie}}\ other\ =\ (\mbox{\hyperlink{class_zamowienie_ad6617150cc6f3d582bf0706e8500d3fd}{Zamowienie}})obj;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ numer\ ==\ other.\mbox{\hyperlink{class_zamowienie_af43e41a5e2a4c4db9b3599d148a0eaae}{Numer}};}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ link\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00086}\mbox{\hyperlink{class_zamowienie_a88c3e268075fe47fd35c12868525873a}{00086}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_zamowienie_a88c3e268075fe47fd35c12868525873a}{Link}}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.link;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ this.link\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00095}00095\ \ \ \ \ \textcolor{comment}{//Alfabet\ oraz\ cyfry,\ nic\ wiecej}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ charget\ =\ \textcolor{stringliteral}{"{}ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"{}};}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00112}\mbox{\hyperlink{class_zamowienie_ad6617150cc6f3d582bf0706e8500d3fd}{00112}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_zamowienie_ad6617150cc6f3d582bf0706e8500d3fd}{Zamowienie}}(\mbox{\hyperlink{class_koszyk}{Koszyk}}\ koszyk,\textcolor{keywordtype}{int}\ idKlienta,\textcolor{keywordtype}{string}\ adres)\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(koszyk.\mbox{\hyperlink{class_koszyk_a531ce581bbd4849acbca287302899c93}{ListaProduktow}}.Count\ <=\ 0)\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_koszyk_is_empty_exception}{KoszykIsEmptyException}}(\textcolor{stringliteral}{"{}Koszyk\ jest\ pusty"{}});}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(adres\ ==\ \textcolor{stringliteral}{"{}"{}}\ ||\ \textcolor{keywordtype}{string}.IsNullOrWhiteSpace(adres))\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_wrong_address_exception}{WrongAddressException}}(\textcolor{stringliteral}{"{}Adres\ jest\ niepoprawy\ lub\ nie\ istnieje"{}});}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ this.idKlienta\ =\ idKlienta;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ this.adres\ =\ adres;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ this.listaProduktow\ =\ koszyk.\mbox{\hyperlink{class_koszyk_a531ce581bbd4849acbca287302899c93}{ListaProduktow}};}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ this.numer\ =\ numerZamowienia++;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ this.wartosc\ =\ koszyk.\mbox{\hyperlink{class_koszyk_ac242a0e876fb532d915b6710990995f4}{Wartosc}};}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ this.dzienZamowienia\ =\ this.ostatniaAktualizacja\ =\ DateTime.Now;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00151}\mbox{\hyperlink{class_zamowienie_a060a3bd1b7ccafb4c42f738190c40076}{00151}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_zamowienie_a060a3bd1b7ccafb4c42f738190c40076}{Zamowienie}}(\textcolor{keywordtype}{int}\ numer,\ \textcolor{keywordtype}{int}\ idKlienta,\ \textcolor{keywordtype}{double}\ wartosc,\ DateTime\ dzienZamowienia,\ DateTime\ ostatniaAktualizacja,\ \textcolor{keywordtype}{string}\ status,\ \textcolor{keywordtype}{string}\ link)\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ this.numer\ =\ numer;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ this.idKlienta\ =\ idKlienta;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ this.wartosc\ =\ wartosc;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ this.dzienZamowienia\ =\ dzienZamowienia;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ this.ostatniaAktualizacja\ =\ ostatniaAktualizacja;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ this.status\ =\ status;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ this.link\ =\ link\ ==\ \textcolor{stringliteral}{"{}none"{}}?\textcolor{stringliteral}{"{}"{}}:link;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ this.listaProduktow\ =\ \textcolor{keyword}{new}\ List<Produkt>();}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ numerZamowienia++;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00161}00161\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00171}\mbox{\hyperlink{class_zamowienie_a9c0c2cab9f6e8926d21cdce6a6fb9bb4}{00171}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_zamowienie_a9c0c2cab9f6e8926d21cdce6a6fb9bb4}{zmienStatus}}(\textcolor{keywordtype}{string}\ status)\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(status\ ==\ \textcolor{stringliteral}{"{}"{}}\ ||\ \textcolor{keywordtype}{string}.IsNullOrWhiteSpace(status))\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_wrong_status_exception}{WrongStatusException}}(\textcolor{stringliteral}{"{}Niepoprawny\ status"{}});}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ this.status\ =\ status;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ this.ostatniaAktualizacja\ =\ DateTime.Now;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{comment}{//debug}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Console.WriteLine("{}[DEBUG]\ Status\ zostal\ zmieniony\ na:\ "{}+status);}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00187}\mbox{\hyperlink{class_zamowienie_af1285f72c1cb2be34cbf249a2be7f1e4}{00187}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_zamowienie_af1285f72c1cb2be34cbf249a2be7f1e4}{generujLink}}()\{\ \ \ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(link\ ==\ \textcolor{stringliteral}{"{}"{}})\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\ =\ \textcolor{stringliteral}{"{}https://www.CoolBookShop.com/pobierz/"{}};}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}[]\ chars\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[16];}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ Random\ random\ =\ \textcolor{keyword}{new}\ Random();}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;i\ <\ chars.Count();\ ++i\ )\{}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chars[i]\ =\ charget[random.Next(charget.Count())];}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ tmp+=\ \textcolor{keyword}{new}\ string(chars);}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ link\ +=\ tmp;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ chars\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ random\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ link;}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00207}00207\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_zamowienie_8cs_source_l00208}00208\ \}}
+
+\end{DoxyCode}

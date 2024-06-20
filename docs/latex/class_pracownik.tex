@@ -1,0 +1,205 @@
+\doxysection{Pracownik Class Reference}
+\hypertarget{class_pracownik}{}\label{class_pracownik}\index{Pracownik@{Pracownik}}
+
+
+Klasa reprezentująca pracownika.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pracownik_a435bedb6428f9e8bd0d2aaf104f06971}{Pracownik}} (string imie, string nazwisko, int id, \mbox{\hyperlink{class_magazyn}{Magazyn}} magazyn)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_pracownik}{Pracownik}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pracownik_adb980262599e883883228e3b0017602e}{realiza\+Zamowienie}} (int numer)
+\begin{DoxyCompactList}\small\item\em Metoda realizująca zamówienie o podanym numerze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pracownik_ab9b6776bf4facb6bf146099be23aa6f7}{zamow\+Kuriera}} (\mbox{\hyperlink{class_kurier}{Kurier}} kurier)
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca informacje o zamówieniach do realizacji. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pracownik_a2fb646c0ee8bc4fa0fbbe2c82877382d}{dodaj\+Produkt}} (string nazwa, int id, double cena, string autor, string kategoria, int type, int stan)
+\begin{DoxyCompactList}\small\item\em Metoda dodająca produkt do magazynu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pracownik_adbd01573009f98172185d1c86896d266}{usun\+Produkt}} (int id)
+\begin{DoxyCompactList}\small\item\em Metoda usuwająca produkt o podanym ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pracownik_a8f218588e7070dc1927d2884149e3947}{ustaw\+Stan}} (int id, int stan)
+\begin{DoxyCompactList}\small\item\em Metoda zmieniająca stan produktu o podanym ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca pracownika. 
+
+Definition at line \mbox{\hyperlink{_pracownik_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_pracownik_8cs_source}{Pracownik.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pracownik_a435bedb6428f9e8bd0d2aaf104f06971}\index{Pracownik@{Pracownik}!Pracownik@{Pracownik}}
+\index{Pracownik@{Pracownik}!Pracownik@{Pracownik}}
+\doxysubsubsection{\texorpdfstring{Pracownik()}{Pracownik()}}
+{\footnotesize\ttfamily \label{class_pracownik_a435bedb6428f9e8bd0d2aaf104f06971} 
+Pracownik.\+Pracownik (\begin{DoxyParamCaption}\item[{string}]{imie}{, }\item[{string}]{nazwisko}{, }\item[{int}]{id}{, }\item[{\mbox{\hyperlink{class_magazyn}{Magazyn}}}]{magazyn}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \doxylink{class_pracownik}{Pracownik}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em imie} & Imię pracownika.\\
+\hline
+{\em nazwisko} & Nazwisko pracownika.\\
+\hline
+{\em id} & Unikalne ID pracownika.\\
+\hline
+{\em magazyn} & \doxylink{class_magazyn}{Magazyn}, w którym pracuje pracownik.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_pracownik_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_pracownik_8cs_source}{Pracownik.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pracownik_a2fb646c0ee8bc4fa0fbbe2c82877382d}\index{Pracownik@{Pracownik}!dodajProdukt@{dodajProdukt}}
+\index{dodajProdukt@{dodajProdukt}!Pracownik@{Pracownik}}
+\doxysubsubsection{\texorpdfstring{dodajProdukt()}{dodajProdukt()}}
+{\footnotesize\ttfamily \label{class_pracownik_a2fb646c0ee8bc4fa0fbbe2c82877382d} 
+void Pracownik.\+dodaj\+Produkt (\begin{DoxyParamCaption}\item[{string}]{nazwa}{, }\item[{int}]{id}{, }\item[{double}]{cena}{, }\item[{string}]{autor}{, }\item[{string}]{kategoria}{, }\item[{int}]{type}{, }\item[{int}]{stan}{}\end{DoxyParamCaption})}
+
+
+
+Metoda dodająca produkt do magazynu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nazwa} & Nazwa produktu.\\
+\hline
+{\em id} & Unikalne ID produktu.\\
+\hline
+{\em cena} & Cena produktu.\\
+\hline
+{\em autor} & Autor produktu.\\
+\hline
+{\em kategoria} & Kategoria produktu.\\
+\hline
+{\em type} & Typ produktu.\\
+\hline
+{\em stan} & Stan produktu.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_wrong_product_name_exception}{Wrong\+Product\+Name\+Exception}} & Wyjątek rzucany, gdy nie podano nazwy produktu.\\
+\hline
+{\em \doxylink{class_wrong_price_exception}{Wrong\+Price\+Exception}} & Wyjątek rzucany, gdy cena produktu jest ujemna.\\
+\hline
+{\em \doxylink{class_wrong_type_exception}{Wrong\+Type\+Exception}} & Wyjątek rzucany, gdy podano niepoprawny typ produktu.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_pracownik_8cs_source_l00075}{75}} of file \mbox{\hyperlink{_pracownik_8cs_source}{Pracownik.\+cs}}.
+
+\Hypertarget{class_pracownik_adb980262599e883883228e3b0017602e}\index{Pracownik@{Pracownik}!realizaZamowienie@{realizaZamowienie}}
+\index{realizaZamowienie@{realizaZamowienie}!Pracownik@{Pracownik}}
+\doxysubsubsection{\texorpdfstring{realizaZamowienie()}{realizaZamowienie()}}
+{\footnotesize\ttfamily \label{class_pracownik_adb980262599e883883228e3b0017602e} 
+void Pracownik.\+realiza\+Zamowienie (\begin{DoxyParamCaption}\item[{int}]{numer}{}\end{DoxyParamCaption})}
+
+
+
+Metoda realizująca zamówienie o podanym numerze. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numer} & Numer zamówienia.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_produkt_is_not_available_exception}{Produkt\+Is\+Not\+Available\+Exception}} & Wyjątek rzucany, gdy produkt nie jest dostępny.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_pracownik_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_pracownik_8cs_source}{Pracownik.\+cs}}.
+
+\Hypertarget{class_pracownik_a8f218588e7070dc1927d2884149e3947}\index{Pracownik@{Pracownik}!ustawStan@{ustawStan}}
+\index{ustawStan@{ustawStan}!Pracownik@{Pracownik}}
+\doxysubsubsection{\texorpdfstring{ustawStan()}{ustawStan()}}
+{\footnotesize\ttfamily \label{class_pracownik_a8f218588e7070dc1927d2884149e3947} 
+void Pracownik.\+ustaw\+Stan (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{int}]{stan}{}\end{DoxyParamCaption})}
+
+
+
+Metoda zmieniająca stan produktu o podanym ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID produktu.\\
+\hline
+{\em stan} & Nowy stan produktu.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_produkt_does_not_exist_exception}{Produkt\+Does\+Not\+Exist\+Exception}} & Wyjątek rzucany, gdy produkt o podanym ID nie istnieje.\\
+\hline
+{\em \doxylink{class_produkt_is_not_physical_exception}{Produkt\+Is\+Not\+Physical\+Exception}} & Wyjątek rzucany, gdy produkt nie jest fizyczny.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_pracownik_8cs_source_l00125}{125}} of file \mbox{\hyperlink{_pracownik_8cs_source}{Pracownik.\+cs}}.
+
+\Hypertarget{class_pracownik_adbd01573009f98172185d1c86896d266}\index{Pracownik@{Pracownik}!usunProdukt@{usunProdukt}}
+\index{usunProdukt@{usunProdukt}!Pracownik@{Pracownik}}
+\doxysubsubsection{\texorpdfstring{usunProdukt()}{usunProdukt()}}
+{\footnotesize\ttfamily \label{class_pracownik_adbd01573009f98172185d1c86896d266} 
+void Pracownik.\+usun\+Produkt (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Metoda usuwająca produkt o podanym ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID produktu.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_produkt_does_not_exist_exception}{Produkt\+Does\+Not\+Exist\+Exception}} & Wyjątek rzucany, gdy produkt o podanym ID nie istnieje.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_pracownik_8cs_source_l00110}{110}} of file \mbox{\hyperlink{_pracownik_8cs_source}{Pracownik.\+cs}}.
+
+\Hypertarget{class_pracownik_ab9b6776bf4facb6bf146099be23aa6f7}\index{Pracownik@{Pracownik}!zamowKuriera@{zamowKuriera}}
+\index{zamowKuriera@{zamowKuriera}!Pracownik@{Pracownik}}
+\doxysubsubsection{\texorpdfstring{zamowKuriera()}{zamowKuriera()}}
+{\footnotesize\ttfamily \label{class_pracownik_ab9b6776bf4facb6bf146099be23aa6f7} 
+void Pracownik.\+zamow\+Kuriera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_kurier}{Kurier}}}]{kurier}{}\end{DoxyParamCaption})}
+
+
+
+Metoda zwracająca informacje o zamówieniach do realizacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kurier} & \doxylink{class_kurier}{Kurier}, który ma dostarczyć zamówienia.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_brak_zamowien_do_wyslania_exception}{Brak\+Zamowien\+Do\+Wyslania\+Exception}} & Wyjątek rzucany, gdy nie ma zamówień do wysłania.\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_pracownik_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_pracownik_8cs_source}{Pracownik.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/domin/\+One\+Drive/\+Pulpit/workspace/cs/project/\+Bookshop/Pracownik.\+cs\end{DoxyCompactItemize}
