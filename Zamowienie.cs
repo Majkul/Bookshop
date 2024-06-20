@@ -67,24 +67,32 @@ class Zamowienie{
         Zamowienie other = (Zamowienie)obj;
         return numer == other.Numer;
     }
-     private static string charget = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    private static string charget = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     private string link = "";
-        public string Link{
-            get{
-                return this.link;
-            }
-            set{
-                this.link = value;
-            }
+    public string Link{
+        get{
+            return this.link;
         }
+        set{
+            this.link = value;
+        }
+    }
 
     /// <summary>
-    /// Jedyny Konstruktor
+    /// Jeden z Konstruktorow
     /// </summary>
     /// <param name="koszyk"> Koszyk, z ktorego produkty sa zamawianie.</param>
     /// <param name="idKlienta"> Id Klienta, do ktorego nalezy zamowienie.</param>
     /// <param name="Adres"> Adres, gdzie dostarczyc zamowienie.</param>
+    /// <exception cref="KoszykIsEmptyException">
+    /// Wyrzucany jest gdy koszyk jest pusty.
+    /// </exception>
+    /// <exception cref="WrongAdressException">
+    /// Wyrzucany jest gdy adres do dostawy nie istnieje czyt:
+    /// adres jest "", albo zrobiony tylko z "white spaces",
+    /// to NIE wykrywa czy miejsce adresu nie istnieje, czyt: Narnia.
+    /// </exception>
     public Zamowienie(Koszyk koszyk,int idKlienta,string adres){
         
         if(koszyk.ListaProduktow.Count <= 0){
@@ -102,7 +110,31 @@ class Zamowienie{
         this.wartosc = koszyk.Wartosc;
         this.dzienZamowienia = this.ostatniaAktualizacja = DateTime.Now;
     }
-    public Zamowienie(int numer, int idKlienta, double wartosc, DateTime dzienZamowienia, DateTime ostatniaAktualizacja, string status, string link){
+    /// <summary>
+    /// Konstruktor uzywany podczas wczytywania plikow.
+    /// </summary>
+    /// <param name="numer">
+    /// Numer zamowienia.
+    /// </param>
+    /// <param name="idKlienta">
+    /// ID klienta, ktory zkladal te zamowienie.
+    /// </param>
+    /// <param name="wartosc">
+    /// Wartosc calego zamowienia.
+    /// </param>
+    /// <param name="dzienZamowienia">
+    /// Czas, w ktorym bylo zlozone zamowienie.
+    /// </param>
+    /// <param name="ostatniaAktualizacja">
+    /// Czas, kiedy ostatnio zamowienie bylo aktualizowane.
+    /// </param>
+    /// <param name="status">
+    /// Status, w jakim zamowienie sie aktualnie znajduje.
+    /// </param>
+    /// <param name="link">
+    /// Link do produktow cyfrowych zamowienia.
+    /// </param>
+        public Zamowienie(int numer, int idKlienta, double wartosc, DateTime dzienZamowienia, DateTime ostatniaAktualizacja, string status, string link){
         this.numer = numer;
         this.idKlienta = idKlienta;
         this.wartosc = wartosc;
@@ -118,6 +150,10 @@ class Zamowienie{
     /// Zmienia status zamowienia
     /// </summary>
     /// <param name="status">Nowy status zamowienia.</param>
+    /// <exception cref="WrongStatusException">
+    /// Wyrzucany jest gdy status jest niepoprawy czyt:
+    /// status jest "" albo sklada sie z "white spaces"
+    /// </exception>
     public void zmienStatus(string status){
         if(status == "" || string.IsNullOrWhiteSpace(status)){
             throw new WrongStatusException("Niepoprawny status");
