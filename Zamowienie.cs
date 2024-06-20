@@ -3,20 +3,24 @@ using System.Dynamic;
 
 
 class Zamowienie{
+    /// <value> Numer uzywany do stworzenia nowego id zamówienia </value>
     static int numerZamowienia = 10568;
     private int numer;
+    /// <value> <c>Numer</c> zamówienia.</value>
     public int Numer{
         get{
             return this.numer;
         }
     }
     private int idKlienta;
+    /// <value> <c>Id Klienta</c> zamówienia. </value>
     public int IdKlienta{
         get{
             return this.idKlienta;
         }
     }
     private string status;
+    /// <value> <c>Status</c> zamówienia. </value>
     public string Status{
         get{
             return this.status;
@@ -26,6 +30,7 @@ class Zamowienie{
         }
     }
     private string adres;
+    /// <value> <c>Adres</c>, do którego zamówienie będzie dostarczane.</value>
     public string Adres{
         get{
             return this.adres;
@@ -33,12 +38,14 @@ class Zamowienie{
     }
 
     private DateTime dzienZamowienia;
+    /// <value> Dzień, w którym było składane zamówienie. </value>
     public DateTime DzienZamowienia{
         get{
             return this.dzienZamowienia;
         }
     }
     private DateTime ostatniaAktualizacja;
+    /// <value> Dzień, w którym zamówienie było ostanio aktualizowane. </value>
     public DateTime OstatniaAktualizacja{
         get{
             return this.ostatniaAktualizacja;
@@ -46,17 +53,23 @@ class Zamowienie{
     }
 
     private List<Produkt> listaProduktow;
+    /// <value> <c>Lista Prodktów</c>, zamówienia. </value>
     public List<Produkt> ListaProduktow{
         get{
             return this.listaProduktow;
         }
     }
     private double wartosc;
+    /// <value> <c>Wartość</c>, całego zamówienia. </value>
     public double Wartosc{
         get{
             return this.wartosc;
         }
     }
+    ///<summary>
+    ///Override porównania 2 zamowień,
+    ///porównoje numer zamowień.
+    ///</summary>
     public override bool Equals(object obj)
     {
         if (obj == null || GetType() != obj.GetType())
@@ -67,9 +80,9 @@ class Zamowienie{
         Zamowienie other = (Zamowienie)obj;
         return numer == other.Numer;
     }
-    private static string charget = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     private string link = "";
+    /// <value> <c>Link</c> do produktów cyfrowych </value>
     public string Link{
         get{
             return this.link;
@@ -79,19 +92,22 @@ class Zamowienie{
         }
     }
 
+    //Alfabet oraz cyfry, nic wiecej
+    private static string charget = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
     /// <summary>
-    /// Jeden z Konstruktorow
+    /// Jeden z Konstruktorów
     /// </summary>
-    /// <param name="koszyk"> Koszyk, z ktorego produkty sa zamawianie.</param>
-    /// <param name="idKlienta"> Id Klienta, do ktorego nalezy zamowienie.</param>
-    /// <param name="Adres"> Adres, gdzie dostarczyc zamowienie.</param>
+    /// <param name="koszyk"> Koszyk, z którego produkty sa zamawianie.</param>
+    /// <param name="idKlienta"> Id Klienta, do którego należy zamówienie.</param>
+    /// <param name="Adres"> Adres, gdzie dostarczyć zamówienie.</param>
     /// <exception cref="KoszykIsEmptyException">
     /// Wyrzucany jest gdy koszyk jest pusty.
     /// </exception>
-    /// <exception cref="WrongAdressException">
+    /// <exception cref="WrongAddressException">
     /// Wyrzucany jest gdy adres do dostawy nie istnieje czyt:
-    /// adres jest "", albo zrobiony tylko z "white spaces",
-    /// to NIE wykrywa czy miejsce adresu nie istnieje, czyt: Narnia.
+    /// adres jest "", albo zlozony jest tylko z "white spaces",
+    /// to NIE wykrywa czy miejsce adresu nie istnieje, np Hogwarts.
     /// </exception>
     public Zamowienie(Koszyk koszyk,int idKlienta,string adres){
         
@@ -101,8 +117,6 @@ class Zamowienie{
         if(adres == "" || string.IsNullOrWhiteSpace(adres)){
             throw new WrongAddressException("Adres jest niepoprawy lub nie istnieje");
         }
-
-
         this.idKlienta = idKlienta;
         this.adres = adres;
         this.listaProduktow = koszyk.ListaProduktow;
@@ -111,28 +125,28 @@ class Zamowienie{
         this.dzienZamowienia = this.ostatniaAktualizacja = DateTime.Now;
     }
     /// <summary>
-    /// Konstruktor uzywany podczas wczytywania plikow.
+    /// Konstruktor używany podczas wczytywania plików.
     /// </summary>
     /// <param name="numer">
-    /// Numer zamowienia.
+    /// Numer zamówienia.
     /// </param>
     /// <param name="idKlienta">
-    /// ID klienta, ktory zkladal te zamowienie.
+    /// ID klienta, który zkładał te zamówienie.
     /// </param>
     /// <param name="wartosc">
-    /// Wartosc calego zamowienia.
+    /// Wartość całego zamówienia.
     /// </param>
     /// <param name="dzienZamowienia">
-    /// Czas, w ktorym bylo zlozone zamowienie.
+    /// Czas, w którym było złozone zamówienie.
     /// </param>
     /// <param name="ostatniaAktualizacja">
-    /// Czas, kiedy ostatnio zamowienie bylo aktualizowane.
+    /// Czas, kiedy ostatnio zamówienie było aktualizowane.
     /// </param>
     /// <param name="status">
-    /// Status, w jakim zamowienie sie aktualnie znajduje.
+    /// Status, w jakim zamówienie sie aktualnie znajduje.
     /// </param>
     /// <param name="link">
-    /// Link do produktow cyfrowych zamowienia.
+    /// Link do produktow cyfrowych zamówienia.
     /// </param>
         public Zamowienie(int numer, int idKlienta, double wartosc, DateTime dzienZamowienia, DateTime ostatniaAktualizacja, string status, string link){
         this.numer = numer;
@@ -147,12 +161,12 @@ class Zamowienie{
     }
 
     /// <summary>
-    /// Zmienia status zamowienia
+    /// Zmienia status zamówienia
     /// </summary>
-    /// <param name="status">Nowy status zamowienia.</param>
+    /// <param name="status">Nowy status zamówienia.</param>
     /// <exception cref="WrongStatusException">
     /// Wyrzucany jest gdy status jest niepoprawy czyt:
-    /// status jest "" albo sklada sie z "white spaces"
+    /// status jest "" albo składa sie z "white spaces"
     /// </exception>
     public void zmienStatus(string status){
         if(status == "" || string.IsNullOrWhiteSpace(status)){
@@ -191,5 +205,4 @@ class Zamowienie{
 
         return link;
     }
-
 }
